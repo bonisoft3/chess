@@ -1,0 +1,897 @@
+{
+  "0xa5f5609cc8def322": {
+    "name": "game",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "mode",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "bot",
+        "type": "text",
+        "retired": false
+      },
+      "4": {
+        "name": "level",
+        "type": "text",
+        "retired": false
+      },
+      "5": {
+        "name": "bot_name",
+        "type": "text",
+        "retired": false
+      },
+      "6": {
+        "name": "bot_line",
+        "type": "text",
+        "retired": false
+      },
+      "7": {
+        "name": "set",
+        "type": "text",
+        "retired": false
+      },
+      "8": {
+        "name": "tc",
+        "type": "text",
+        "retired": false
+      },
+      "9": {
+        "name": "side",
+        "type": "text",
+        "retired": false
+      },
+      "10": {
+        "name": "board",
+        "type": "text",
+        "retired": false
+      },
+      "11": {
+        "name": "castling",
+        "type": "text",
+        "retired": false
+      },
+      "12": {
+        "name": "ep",
+        "type": "text",
+        "retired": false
+      },
+      "13": {
+        "name": "halfmove",
+        "type": "int",
+        "retired": false
+      },
+      "14": {
+        "name": "fullmove",
+        "type": "int",
+        "retired": false
+      },
+      "15": {
+        "name": "fen",
+        "type": "text",
+        "retired": false
+      },
+      "16": {
+        "name": "turn",
+        "type": "text",
+        "retired": false
+      },
+      "17": {
+        "name": "ply",
+        "type": "int",
+        "retired": false
+      },
+      "18": {
+        "name": "status",
+        "type": "text",
+        "retired": false
+      },
+      "19": {
+        "name": "result",
+        "type": "text",
+        "retired": false
+      },
+      "20": {
+        "name": "won",
+        "type": "text",
+        "retired": false
+      },
+      "21": {
+        "name": "termination",
+        "type": "text",
+        "retired": false
+      },
+      "22": {
+        "name": "check",
+        "type": "text",
+        "retired": false
+      },
+      "23": {
+        "name": "selected",
+        "type": "text",
+        "retired": false
+      },
+      "24": {
+        "name": "flipped",
+        "type": "text",
+        "retired": false
+      },
+      "25": {
+        "name": "dragged",
+        "type": "text",
+        "retired": false
+      },
+      "26": {
+        "name": "last_from",
+        "type": "text",
+        "retired": false
+      },
+      "27": {
+        "name": "last_to",
+        "type": "text",
+        "retired": false
+      },
+      "28": {
+        "name": "current",
+        "type": "text",
+        "retired": false
+      },
+      "29": {
+        "name": "ordinal",
+        "type": "text",
+        "retired": false
+      },
+      "30": {
+        "name": "white_ms",
+        "type": "int",
+        "retired": true
+      },
+      "31": {
+        "name": "black_ms",
+        "type": "int",
+        "retired": true
+      },
+      "32": {
+        "name": "last_tick",
+        "type": "int",
+        "retired": false
+      },
+      "33": {
+        "name": "cursor",
+        "type": "text",
+        "retired": false
+      },
+      "34": {
+        "name": "step",
+        "type": "text",
+        "retired": false
+      },
+      "35": {
+        "name": "caret",
+        "type": "text",
+        "retired": false
+      },
+      "36": {
+        "name": "caret_go",
+        "type": "text",
+        "retired": false
+      },
+      "37": {
+        "name": "promo_from",
+        "type": "text",
+        "retired": false
+      },
+      "38": {
+        "name": "promo_to",
+        "type": "text",
+        "retired": false
+      },
+      "39": {
+        "name": "promo_f",
+        "type": "text",
+        "retired": false
+      },
+      "40": {
+        "name": "promo_r",
+        "type": "text",
+        "retired": false
+      },
+      "41": {
+        "name": "draw_offer",
+        "type": "text",
+        "retired": false
+      },
+      "42": {
+        "name": "eco",
+        "type": "text",
+        "retired": false
+      },
+      "43": {
+        "name": "opening",
+        "type": "text",
+        "retired": false
+      },
+      "44": {
+        "name": "taken_white",
+        "type": "text",
+        "retired": false
+      },
+      "45": {
+        "name": "taken_black",
+        "type": "text",
+        "retired": false
+      },
+      "46": {
+        "name": "edge",
+        "type": "int",
+        "retired": false
+      },
+      "47": {
+        "name": "reviewing",
+        "type": "text",
+        "retired": false
+      },
+      "48": {
+        "name": "pgn",
+        "type": "text",
+        "retired": false
+      },
+      "49": {
+        "name": "ask",
+        "type": "text",
+        "retired": false
+      },
+      "50": {
+        "name": "ask_ply",
+        "type": "text",
+        "retired": false
+      },
+      "51": {
+        "name": "ask_nodes",
+        "type": "text",
+        "retired": false
+      },
+      "52": {
+        "name": "ask_lines",
+        "type": "text",
+        "retired": false
+      },
+      "53": {
+        "name": "review",
+        "type": "text",
+        "retired": false
+      },
+      "54": {
+        "name": "review_line",
+        "type": "text",
+        "retired": false
+      },
+      "55": {
+        "name": "acc_low",
+        "type": "text",
+        "retired": false
+      },
+      "56": {
+        "name": "acc_top",
+        "type": "text",
+        "retired": false
+      },
+      "57": {
+        "name": "tally_low",
+        "type": "text",
+        "retired": false
+      },
+      "58": {
+        "name": "tally_top",
+        "type": "text",
+        "retired": false
+      },
+      "59": {
+        "name": "bar",
+        "type": "text",
+        "retired": false
+      },
+      "60": {
+        "name": "bar_label",
+        "type": "text",
+        "retired": false
+      },
+      "61": {
+        "name": "note_head",
+        "type": "text",
+        "retired": false
+      },
+      "62": {
+        "name": "note_mark",
+        "type": "text",
+        "retired": false
+      },
+      "63": {
+        "name": "note",
+        "type": "text",
+        "retired": false
+      },
+      "64": {
+        "name": "hint",
+        "type": "text",
+        "retired": false
+      },
+      "65": {
+        "name": "seat_top_name",
+        "type": "text",
+        "retired": false
+      },
+      "66": {
+        "name": "seat_top_line",
+        "type": "text",
+        "retired": false
+      },
+      "67": {
+        "name": "seat_top_ini",
+        "type": "text",
+        "retired": false
+      },
+      "68": {
+        "name": "seat_top_ms",
+        "type": "int",
+        "retired": true
+      },
+      "69": {
+        "name": "seat_top_taken",
+        "type": "text",
+        "retired": false
+      },
+      "70": {
+        "name": "seat_top_edge",
+        "type": "text",
+        "retired": false
+      },
+      "71": {
+        "name": "seat_top_turn",
+        "type": "text",
+        "retired": false
+      },
+      "72": {
+        "name": "seat_top_low",
+        "type": "text",
+        "retired": false
+      },
+      "73": {
+        "name": "seat_low_name",
+        "type": "text",
+        "retired": false
+      },
+      "74": {
+        "name": "seat_low_line",
+        "type": "text",
+        "retired": false
+      },
+      "75": {
+        "name": "seat_low_ini",
+        "type": "text",
+        "retired": false
+      },
+      "76": {
+        "name": "seat_low_ms",
+        "type": "int",
+        "retired": true
+      },
+      "77": {
+        "name": "seat_low_taken",
+        "type": "text",
+        "retired": false
+      },
+      "78": {
+        "name": "seat_low_edge",
+        "type": "text",
+        "retired": false
+      },
+      "79": {
+        "name": "seat_low_turn",
+        "type": "text",
+        "retired": false
+      },
+      "80": {
+        "name": "seat_low_low",
+        "type": "text",
+        "retired": false
+      },
+      "81": {
+        "name": "seat_top_elo",
+        "type": "text",
+        "retired": false
+      },
+      "82": {
+        "name": "seat_low_elo",
+        "type": "text",
+        "retired": false
+      },
+      "83": {
+        "name": "white_clock",
+        "type": "duration",
+        "retired": false
+      },
+      "84": {
+        "name": "black_clock",
+        "type": "duration",
+        "retired": false
+      },
+      "85": {
+        "name": "seat_top_clock",
+        "type": "duration",
+        "retired": false
+      },
+      "86": {
+        "name": "seat_low_clock",
+        "type": "duration",
+        "retired": false
+      }
+    }
+  },
+  "0x8d9203baf9a19c74": {
+    "name": "setup",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "mode",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "bot",
+        "type": "text",
+        "retired": false
+      },
+      "4": {
+        "name": "level",
+        "type": "text",
+        "retired": false
+      },
+      "5": {
+        "name": "tc",
+        "type": "text",
+        "retired": false
+      },
+      "6": {
+        "name": "side",
+        "type": "text",
+        "retired": false
+      }
+    }
+  },
+  "0xc5cdacfd2b60f737": {
+    "name": "move",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "game_id",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "ply",
+        "type": "int",
+        "retired": false
+      },
+      "4": {
+        "name": "number",
+        "type": "int",
+        "retired": false
+      },
+      "5": {
+        "name": "color",
+        "type": "text",
+        "retired": false
+      },
+      "6": {
+        "name": "san",
+        "type": "text",
+        "retired": false
+      },
+      "7": {
+        "name": "uci",
+        "type": "text",
+        "retired": false
+      },
+      "8": {
+        "name": "board_after",
+        "type": "text",
+        "retired": false
+      },
+      "9": {
+        "name": "turn_after",
+        "type": "text",
+        "retired": false
+      },
+      "10": {
+        "name": "castling_after",
+        "type": "text",
+        "retired": false
+      },
+      "11": {
+        "name": "ep_after",
+        "type": "text",
+        "retired": false
+      },
+      "12": {
+        "name": "halfmove_after",
+        "type": "int",
+        "retired": false
+      },
+      "13": {
+        "name": "fullmove_after",
+        "type": "int",
+        "retired": false
+      },
+      "14": {
+        "name": "fen_after",
+        "type": "text",
+        "retired": false
+      },
+      "15": {
+        "name": "capture",
+        "type": "text",
+        "retired": false
+      },
+      "16": {
+        "name": "check",
+        "type": "text",
+        "retired": false
+      },
+      "17": {
+        "name": "retracted",
+        "type": "text",
+        "retired": false
+      },
+      "18": {
+        "name": "white_ms",
+        "type": "int",
+        "retired": true
+      },
+      "19": {
+        "name": "black_ms",
+        "type": "int",
+        "retired": true
+      },
+      "20": {
+        "name": "before",
+        "type": "text",
+        "retired": false
+      },
+      "21": {
+        "name": "second",
+        "type": "text",
+        "retired": false
+      },
+      "22": {
+        "name": "best",
+        "type": "text",
+        "retired": false
+      },
+      "23": {
+        "name": "line",
+        "type": "text",
+        "retired": false
+      },
+      "24": {
+        "name": "after",
+        "type": "text",
+        "retired": false
+      },
+      "25": {
+        "name": "mark",
+        "type": "text",
+        "retired": false
+      },
+      "26": {
+        "name": "tide",
+        "type": "text",
+        "retired": false
+      },
+      "27": {
+        "name": "white_clock",
+        "type": "duration",
+        "retired": false
+      },
+      "28": {
+        "name": "black_clock",
+        "type": "duration",
+        "retired": false
+      }
+    }
+  },
+  "0xcb6a4e781c0adf82": {
+    "name": "square",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "ord",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "label",
+        "type": "text",
+        "retired": false
+      },
+      "4": {
+        "name": "shade",
+        "type": "text",
+        "retired": false
+      },
+      "5": {
+        "name": "piece",
+        "type": "text",
+        "retired": false
+      },
+      "6": {
+        "name": "glyph",
+        "type": "text",
+        "retired": false
+      },
+      "7": {
+        "name": "color",
+        "type": "text",
+        "retired": false
+      },
+      "8": {
+        "name": "selected",
+        "type": "text",
+        "retired": false
+      },
+      "9": {
+        "name": "target",
+        "type": "text",
+        "retired": false
+      },
+      "10": {
+        "name": "capture",
+        "type": "text",
+        "retired": false
+      },
+      "11": {
+        "name": "last",
+        "type": "text",
+        "retired": false
+      },
+      "12": {
+        "name": "check",
+        "type": "text",
+        "retired": false
+      },
+      "13": {
+        "name": "drag",
+        "type": "text",
+        "retired": false
+      },
+      "14": {
+        "name": "drag_from",
+        "type": "text",
+        "retired": false
+      },
+      "15": {
+        "name": "coord_file",
+        "type": "text",
+        "retired": false
+      },
+      "16": {
+        "name": "coord_rank",
+        "type": "text",
+        "retired": false
+      }
+    }
+  },
+  "0xc103e54cf496409a": {
+    "name": "piece",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "piece",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "color",
+        "type": "text",
+        "retired": false
+      },
+      "4": {
+        "name": "symbol",
+        "type": "text",
+        "retired": false
+      },
+      "5": {
+        "name": "initial",
+        "type": "text",
+        "retired": false
+      },
+      "6": {
+        "name": "glyph",
+        "type": "text",
+        "retired": false
+      },
+      "7": {
+        "name": "square",
+        "type": "text",
+        "retired": false
+      },
+      "8": {
+        "name": "file",
+        "type": "int",
+        "retired": false
+      },
+      "9": {
+        "name": "rank",
+        "type": "int",
+        "retired": false
+      },
+      "10": {
+        "name": "taken",
+        "type": "text",
+        "retired": false
+      },
+      "11": {
+        "name": "lit",
+        "type": "text",
+        "retired": false
+      }
+    }
+  },
+  "0x9e549ba353a215ba": {
+    "name": "legal",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "game_id",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "ply",
+        "type": "int",
+        "retired": false
+      },
+      "4": {
+        "name": "from_sq",
+        "type": "text",
+        "retired": false
+      },
+      "5": {
+        "name": "to_sq",
+        "type": "text",
+        "retired": false
+      },
+      "6": {
+        "name": "uci",
+        "type": "text",
+        "retired": false
+      },
+      "7": {
+        "name": "san",
+        "type": "text",
+        "retired": false
+      },
+      "8": {
+        "name": "promo",
+        "type": "text",
+        "retired": false
+      },
+      "9": {
+        "name": "board_after",
+        "type": "text",
+        "retired": false
+      },
+      "10": {
+        "name": "turn_after",
+        "type": "text",
+        "retired": false
+      },
+      "11": {
+        "name": "castling_after",
+        "type": "text",
+        "retired": false
+      },
+      "12": {
+        "name": "ep_after",
+        "type": "text",
+        "retired": false
+      },
+      "13": {
+        "name": "halfmove_after",
+        "type": "int",
+        "retired": false
+      },
+      "14": {
+        "name": "fullmove_after",
+        "type": "int",
+        "retired": false
+      },
+      "15": {
+        "name": "fen_after",
+        "type": "text",
+        "retired": false
+      },
+      "16": {
+        "name": "capture",
+        "type": "text",
+        "retired": false
+      },
+      "17": {
+        "name": "check",
+        "type": "text",
+        "retired": false
+      },
+      "18": {
+        "name": "mate",
+        "type": "text",
+        "retired": false
+      }
+    }
+  },
+  "0x8e2ea6ba528e101e": {
+    "name": "tick",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "n",
+        "type": "int",
+        "retired": false
+      },
+      "3": {
+        "name": "beat",
+        "type": "text",
+        "retired": false
+      }
+    }
+  },
+  "0xe7d785b5461a232c": {
+    "name": "opening",
+    "fields": {
+      "1": {
+        "name": "id",
+        "type": "text",
+        "retired": false
+      },
+      "2": {
+        "name": "name",
+        "type": "text",
+        "retired": false
+      },
+      "3": {
+        "name": "uci",
+        "type": "text",
+        "retired": false
+      }
+    }
+  }
+}

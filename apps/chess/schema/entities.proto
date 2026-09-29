@@ -1,0 +1,207 @@
+syntax = "proto3";
+package pronto.entities;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/struct.proto";
+
+message Game {
+  optional string id = 1 [json_name = "id"];
+  optional string mode = 2 [json_name = "mode"];
+  optional string bot = 3 [json_name = "bot"];
+  optional string level = 4 [json_name = "level"];
+  optional string bot_name = 5 [json_name = "bot_name"];
+  optional string bot_line = 6 [json_name = "bot_line"];
+  optional string set = 7 [json_name = "set"];
+  optional string tc = 8 [json_name = "tc"];
+  optional string side = 9 [json_name = "side"];
+  optional string board = 10 [json_name = "board"];
+  optional string castling = 11 [json_name = "castling"];
+  optional string ep = 12 [json_name = "ep"];
+  optional int32 halfmove = 13 [json_name = "halfmove"];
+  optional int32 fullmove = 14 [json_name = "fullmove"];
+  optional string fen = 15 [json_name = "fen"];
+  optional string turn = 16 [json_name = "turn"];
+  optional int32 ply = 17 [json_name = "ply"];
+  optional string status = 18 [json_name = "status"];
+  optional string result = 19 [json_name = "result"];
+  optional string won = 20 [json_name = "won"];
+  optional string termination = 21 [json_name = "termination"];
+  optional string check = 22 [json_name = "check"];
+  optional string selected = 23 [json_name = "selected"];
+  optional string flipped = 24 [json_name = "flipped"];
+  optional string dragged = 25 [json_name = "dragged"];
+  optional string last_from = 26 [json_name = "last_from"];
+  optional string last_to = 27 [json_name = "last_to"];
+  optional string current = 28 [json_name = "current"];
+  optional string ordinal = 29 [json_name = "ordinal"];
+  reserved 30;
+  reserved "white_ms";
+  google.protobuf.Duration white_clock = 83 [json_name = "white_clock"];
+  reserved 31;
+  reserved "black_ms";
+  google.protobuf.Duration black_clock = 84 [json_name = "black_clock"];
+  optional int32 last_tick = 32 [json_name = "last_tick"];
+  optional string cursor = 33 [json_name = "cursor"];
+  optional string step = 34 [json_name = "step"];
+  optional string caret = 35 [json_name = "caret"];
+  optional string caret_go = 36 [json_name = "caret_go"];
+  optional string promo_from = 37 [json_name = "promo_from"];
+  optional string promo_to = 38 [json_name = "promo_to"];
+  optional string promo_f = 39 [json_name = "promo_f"];
+  optional string promo_r = 40 [json_name = "promo_r"];
+  optional string draw_offer = 41 [json_name = "draw_offer"];
+  optional string eco = 42 [json_name = "eco"];
+  optional string opening = 43 [json_name = "opening"];
+  optional string taken_white = 44 [json_name = "taken_white"];
+  optional string taken_black = 45 [json_name = "taken_black"];
+  optional int32 edge = 46 [json_name = "edge"];
+  optional string reviewing = 47 [json_name = "reviewing"];
+  optional string pgn = 48 [json_name = "pgn"];
+  optional string ask = 49 [json_name = "ask"];
+  optional string ask_ply = 50 [json_name = "ask_ply"];
+  optional string ask_nodes = 51 [json_name = "ask_nodes"];
+  optional string ask_lines = 52 [json_name = "ask_lines"];
+  optional string review = 53 [json_name = "review"];
+  optional string review_line = 54 [json_name = "review_line"];
+  optional string acc_low = 55 [json_name = "acc_low"];
+  optional string acc_top = 56 [json_name = "acc_top"];
+  optional string tally_low = 57 [json_name = "tally_low"];
+  optional string tally_top = 58 [json_name = "tally_top"];
+  optional string bar = 59 [json_name = "bar"];
+  optional string bar_label = 60 [json_name = "bar_label"];
+  optional string note_head = 61 [json_name = "note_head"];
+  optional string note_mark = 62 [json_name = "note_mark"];
+  optional string note = 63 [json_name = "note"];
+  optional string hint = 64 [json_name = "hint"];
+  optional string seat_top_name = 65 [json_name = "seat_top_name"];
+  optional string seat_top_line = 66 [json_name = "seat_top_line"];
+  optional string seat_top_ini = 67 [json_name = "seat_top_ini"];
+  reserved 68;
+  reserved "seat_top_ms";
+  google.protobuf.Duration seat_top_clock = 85 [json_name = "seat_top_clock"];
+  optional string seat_top_taken = 69 [json_name = "seat_top_taken"];
+  optional string seat_top_edge = 70 [json_name = "seat_top_edge"];
+  optional string seat_top_turn = 71 [json_name = "seat_top_turn"];
+  optional string seat_top_low = 72 [json_name = "seat_top_low"];
+  optional string seat_low_name = 73 [json_name = "seat_low_name"];
+  optional string seat_low_line = 74 [json_name = "seat_low_line"];
+  optional string seat_low_ini = 75 [json_name = "seat_low_ini"];
+  reserved 76;
+  reserved "seat_low_ms";
+  google.protobuf.Duration seat_low_clock = 86 [json_name = "seat_low_clock"];
+  optional string seat_low_taken = 77 [json_name = "seat_low_taken"];
+  optional string seat_low_edge = 78 [json_name = "seat_low_edge"];
+  optional string seat_low_turn = 79 [json_name = "seat_low_turn"];
+  optional string seat_low_low = 80 [json_name = "seat_low_low"];
+  optional string seat_top_elo = 81 [json_name = "seat_top_elo"];
+  optional string seat_low_elo = 82 [json_name = "seat_low_elo"];
+}
+
+message Legal {
+  optional string id = 1 [json_name = "id"];
+  optional string game_id = 2 [json_name = "game_id"];
+  optional int32 ply = 3 [json_name = "ply"];
+  optional string from_sq = 4 [json_name = "from_sq"];
+  optional string to_sq = 5 [json_name = "to_sq"];
+  optional string uci = 6 [json_name = "uci"];
+  optional string san = 7 [json_name = "san"];
+  optional string promo = 8 [json_name = "promo"];
+  optional string board_after = 9 [json_name = "board_after"];
+  optional string turn_after = 10 [json_name = "turn_after"];
+  optional string castling_after = 11 [json_name = "castling_after"];
+  optional string ep_after = 12 [json_name = "ep_after"];
+  optional int32 halfmove_after = 13 [json_name = "halfmove_after"];
+  optional int32 fullmove_after = 14 [json_name = "fullmove_after"];
+  optional string fen_after = 15 [json_name = "fen_after"];
+  optional string capture = 16 [json_name = "capture"];
+  optional string check = 17 [json_name = "check"];
+  optional string mate = 18 [json_name = "mate"];
+}
+
+message Move {
+  optional string id = 1 [json_name = "id"];
+  optional string game_id = 2 [json_name = "game_id"];
+  optional int32 ply = 3 [json_name = "ply"];
+  optional int32 number = 4 [json_name = "number"];
+  optional string color = 5 [json_name = "color"];
+  optional string san = 6 [json_name = "san"];
+  optional string uci = 7 [json_name = "uci"];
+  optional string board_after = 8 [json_name = "board_after"];
+  optional string turn_after = 9 [json_name = "turn_after"];
+  optional string castling_after = 10 [json_name = "castling_after"];
+  optional string ep_after = 11 [json_name = "ep_after"];
+  optional int32 halfmove_after = 12 [json_name = "halfmove_after"];
+  optional int32 fullmove_after = 13 [json_name = "fullmove_after"];
+  optional string fen_after = 14 [json_name = "fen_after"];
+  optional string capture = 15 [json_name = "capture"];
+  optional string check = 16 [json_name = "check"];
+  optional string retracted = 17 [json_name = "retracted"];
+  reserved 18;
+  reserved "white_ms";
+  google.protobuf.Duration white_clock = 27 [json_name = "white_clock"];
+  reserved 19;
+  reserved "black_ms";
+  google.protobuf.Duration black_clock = 28 [json_name = "black_clock"];
+  optional string before = 20 [json_name = "before"];
+  optional string second = 21 [json_name = "second"];
+  optional string best = 22 [json_name = "best"];
+  optional string line = 23 [json_name = "line"];
+  optional string after = 24 [json_name = "after"];
+  optional string mark = 25 [json_name = "mark"];
+  optional string tide = 26 [json_name = "tide"];
+}
+
+message Opening {
+  optional string id = 1 [json_name = "id"];
+  optional string name = 2 [json_name = "name"];
+  optional string uci = 3 [json_name = "uci"];
+}
+
+message Piece {
+  optional string id = 1 [json_name = "id"];
+  optional string piece = 2 [json_name = "piece"];
+  optional string color = 3 [json_name = "color"];
+  optional string symbol = 4 [json_name = "symbol"];
+  optional string initial = 5 [json_name = "initial"];
+  optional string glyph = 6 [json_name = "glyph"];
+  optional string square = 7 [json_name = "square"];
+  optional int32 file = 8 [json_name = "file"];
+  optional int32 rank = 9 [json_name = "rank"];
+  optional string taken = 10 [json_name = "taken"];
+  optional string lit = 11 [json_name = "lit"];
+}
+
+message Setup {
+  optional string id = 1 [json_name = "id"];
+  optional string mode = 2 [json_name = "mode"];
+  optional string bot = 3 [json_name = "bot"];
+  optional string level = 4 [json_name = "level"];
+  optional string tc = 5 [json_name = "tc"];
+  optional string side = 6 [json_name = "side"];
+}
+
+message Square {
+  optional string id = 1 [json_name = "id"];
+  optional string ord = 2 [json_name = "ord"];
+  optional string label = 3 [json_name = "label"];
+  optional string shade = 4 [json_name = "shade"];
+  optional string piece = 5 [json_name = "piece"];
+  optional string glyph = 6 [json_name = "glyph"];
+  optional string color = 7 [json_name = "color"];
+  optional string selected = 8 [json_name = "selected"];
+  optional string target = 9 [json_name = "target"];
+  optional string capture = 10 [json_name = "capture"];
+  optional string last = 11 [json_name = "last"];
+  optional string check = 12 [json_name = "check"];
+  optional string drag = 13 [json_name = "drag"];
+  optional string drag_from = 14 [json_name = "drag_from"];
+  optional string coord_file = 15 [json_name = "coord_file"];
+  optional string coord_rank = 16 [json_name = "coord_rank"];
+}
+
+message Tick {
+  optional string id = 1 [json_name = "id"];
+  optional int32 n = 2 [json_name = "n"];
+  optional string beat = 3 [json_name = "beat"];
+}

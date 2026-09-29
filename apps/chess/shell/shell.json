@@ -1,0 +1,2434 @@
+{
+  "app": "chess",
+  "floors": {
+    "touch": 24
+  },
+  "local": {
+    "game": "device",
+    "legal": "tab",
+    "move": "device",
+    "opening": "tab",
+    "piece": "tab",
+    "setup": "device",
+    "square": "tab",
+    "tick": "tab"
+  },
+  "optional": {
+    "game": [
+      {
+        "name": "castling",
+        "type": "string"
+      },
+      {
+        "name": "ep",
+        "type": "string"
+      },
+      {
+        "name": "result",
+        "type": "string"
+      },
+      {
+        "name": "won",
+        "type": "string"
+      },
+      {
+        "name": "termination",
+        "type": "string"
+      },
+      {
+        "name": "selected",
+        "type": "string"
+      },
+      {
+        "name": "last_from",
+        "type": "string"
+      },
+      {
+        "name": "last_to",
+        "type": "string"
+      },
+      {
+        "name": "step",
+        "type": "string"
+      },
+      {
+        "name": "caret_go",
+        "type": "string"
+      },
+      {
+        "name": "promo_from",
+        "type": "string"
+      },
+      {
+        "name": "promo_to",
+        "type": "string"
+      },
+      {
+        "name": "eco",
+        "type": "string"
+      },
+      {
+        "name": "opening",
+        "type": "string"
+      },
+      {
+        "name": "taken_white",
+        "type": "string"
+      },
+      {
+        "name": "taken_black",
+        "type": "string"
+      },
+      {
+        "name": "pgn",
+        "type": "string"
+      },
+      {
+        "name": "ask",
+        "type": "string"
+      },
+      {
+        "name": "ask_ply",
+        "type": "string"
+      },
+      {
+        "name": "ask_nodes",
+        "type": "string"
+      },
+      {
+        "name": "ask_lines",
+        "type": "string"
+      },
+      {
+        "name": "review",
+        "type": "string"
+      },
+      {
+        "name": "review_line",
+        "type": "string"
+      },
+      {
+        "name": "acc_low",
+        "type": "string"
+      },
+      {
+        "name": "acc_top",
+        "type": "string"
+      },
+      {
+        "name": "tally_low",
+        "type": "string"
+      },
+      {
+        "name": "tally_top",
+        "type": "string"
+      },
+      {
+        "name": "bar",
+        "type": "string"
+      },
+      {
+        "name": "bar_label",
+        "type": "string"
+      },
+      {
+        "name": "note_head",
+        "type": "string"
+      },
+      {
+        "name": "note_mark",
+        "type": "string"
+      },
+      {
+        "name": "note",
+        "type": "string"
+      },
+      {
+        "name": "hint",
+        "type": "string"
+      },
+      {
+        "name": "seat_top_taken",
+        "type": "string"
+      },
+      {
+        "name": "seat_top_edge",
+        "type": "string"
+      },
+      {
+        "name": "seat_low_taken",
+        "type": "string"
+      },
+      {
+        "name": "seat_low_edge",
+        "type": "string"
+      },
+      {
+        "name": "seat_top_elo",
+        "type": "string"
+      },
+      {
+        "name": "seat_low_elo",
+        "type": "string"
+      }
+    ],
+    "move": [
+      {
+        "name": "castling_after",
+        "type": "string"
+      },
+      {
+        "name": "ep_after",
+        "type": "string"
+      },
+      {
+        "name": "before",
+        "type": "string"
+      },
+      {
+        "name": "second",
+        "type": "string"
+      },
+      {
+        "name": "best",
+        "type": "string"
+      },
+      {
+        "name": "line",
+        "type": "string"
+      },
+      {
+        "name": "after",
+        "type": "string"
+      },
+      {
+        "name": "mark",
+        "type": "string"
+      },
+      {
+        "name": "tide",
+        "type": "string"
+      }
+    ],
+    "square": [
+      {
+        "name": "piece",
+        "type": "string"
+      },
+      {
+        "name": "glyph",
+        "type": "string"
+      },
+      {
+        "name": "color",
+        "type": "string"
+      },
+      {
+        "name": "drag_from",
+        "type": "string"
+      },
+      {
+        "name": "coord_file",
+        "type": "string"
+      },
+      {
+        "name": "coord_rank",
+        "type": "string"
+      }
+    ],
+    "legal": [
+      {
+        "name": "promo",
+        "type": "string"
+      },
+      {
+        "name": "castling_after",
+        "type": "string"
+      },
+      {
+        "name": "ep_after",
+        "type": "string"
+      }
+    ]
+  },
+  "partialUniques": {
+    "game": [
+      {
+        "cols": [
+          "current"
+        ],
+        "where": "current=eq.yes"
+      }
+    ]
+  },
+  "seed": {
+    "tick": [
+      {
+        "id": "tick",
+        "n": 0,
+        "beat": "on"
+      }
+    ],
+    "opening": [
+      {
+        "id": "A00",
+        "name": "Dunst Opening",
+        "uci": "b1c3"
+      },
+      {
+        "id": "A02",
+        "name": "Bird's Opening",
+        "uci": "f2f4"
+      },
+      {
+        "id": "A04",
+        "name": "Réti Opening",
+        "uci": "g1f3"
+      },
+      {
+        "id": "A10",
+        "name": "English Opening",
+        "uci": "c2c4"
+      },
+      {
+        "id": "A40",
+        "name": "Queen's Pawn",
+        "uci": "d2d4"
+      },
+      {
+        "id": "A45",
+        "name": "Indian Defence",
+        "uci": "d2d4 g8f6"
+      },
+      {
+        "id": "A80",
+        "name": "Dutch Defence",
+        "uci": "d2d4 f7f5"
+      },
+      {
+        "id": "B00",
+        "name": "King's Pawn",
+        "uci": "e2e4"
+      },
+      {
+        "id": "B01",
+        "name": "Scandinavian Defence",
+        "uci": "e2e4 d7d5"
+      },
+      {
+        "id": "B02",
+        "name": "Alekhine Defence",
+        "uci": "e2e4 g8f6"
+      },
+      {
+        "id": "B06",
+        "name": "Modern Defence",
+        "uci": "e2e4 g7g6"
+      },
+      {
+        "id": "B07",
+        "name": "Pirc Defence",
+        "uci": "e2e4 d7d6"
+      },
+      {
+        "id": "B10",
+        "name": "Caro-Kann Defence",
+        "uci": "e2e4 c7c6"
+      },
+      {
+        "id": "B20",
+        "name": "Sicilian Defence",
+        "uci": "e2e4 c7c5"
+      },
+      {
+        "id": "B30",
+        "name": "Sicilian, Old Sicilian",
+        "uci": "e2e4 c7c5 g1f3 b8c6"
+      },
+      {
+        "id": "B40",
+        "name": "Sicilian, French Variation",
+        "uci": "e2e4 c7c5 g1f3 e7e6"
+      },
+      {
+        "id": "B50",
+        "name": "Sicilian, Modern Variations",
+        "uci": "e2e4 c7c5 g1f3 d7d6"
+      },
+      {
+        "id": "C00",
+        "name": "French Defence",
+        "uci": "e2e4 e7e6"
+      },
+      {
+        "id": "C20",
+        "name": "King's Pawn Game",
+        "uci": "e2e4 e7e5"
+      },
+      {
+        "id": "C25",
+        "name": "Vienna Game",
+        "uci": "e2e4 e7e5 b1c3"
+      },
+      {
+        "id": "C30",
+        "name": "King's Gambit",
+        "uci": "e2e4 e7e5 f2f4"
+      },
+      {
+        "id": "C42",
+        "name": "Petrov's Defence",
+        "uci": "e2e4 e7e5 g1f3 g8f6"
+      },
+      {
+        "id": "C44",
+        "name": "Scotch Game",
+        "uci": "e2e4 e7e5 g1f3 b8c6 d2d4"
+      },
+      {
+        "id": "C50",
+        "name": "Italian Game",
+        "uci": "e2e4 e7e5 g1f3 b8c6 f1c4"
+      },
+      {
+        "id": "C60",
+        "name": "Ruy López",
+        "uci": "e2e4 e7e5 g1f3 b8c6 f1b5"
+      },
+      {
+        "id": "D00",
+        "name": "Queen's Pawn Game",
+        "uci": "d2d4 d7d5"
+      },
+      {
+        "id": "D06",
+        "name": "Queen's Gambit",
+        "uci": "d2d4 d7d5 c2c4"
+      },
+      {
+        "id": "D10",
+        "name": "Slav Defence",
+        "uci": "d2d4 d7d5 c2c4 c7c6"
+      },
+      {
+        "id": "D20",
+        "name": "Queen's Gambit Accepted",
+        "uci": "d2d4 d7d5 c2c4 d5c4"
+      },
+      {
+        "id": "D30",
+        "name": "Queen's Gambit Declined",
+        "uci": "d2d4 d7d5 c2c4 e7e6"
+      },
+      {
+        "id": "E00",
+        "name": "Indian Game",
+        "uci": "d2d4 g8f6 c2c4 e7e6"
+      },
+      {
+        "id": "E20",
+        "name": "Nimzo-Indian Defence",
+        "uci": "d2d4 g8f6 c2c4 e7e6 b1c3 f8b4"
+      },
+      {
+        "id": "E60",
+        "name": "King's Indian Defence",
+        "uci": "d2d4 g8f6 c2c4 g7g6"
+      }
+    ]
+  },
+  "server": false,
+  "routes": [
+    {
+      "path": "/",
+      "screen": "board",
+      "nav": {
+        "label": "Play"
+      },
+      "files": {
+        "html": "shell/screens/board.html",
+        "css": "shell/screens/board.css",
+        "handlers": [
+          "shell/handlers/bump.js",
+          "shell/handlers/referee.js",
+          "shell/handlers/seated.js"
+        ],
+        "adapters": [],
+        "shared": [
+          "shell/shared/paper.css"
+        ],
+        "renderers": [
+          "shell/renderers/clock.js"
+        ]
+      },
+      "ssr": "spa",
+      "states": [
+        "loading",
+        "empty",
+        "populated",
+        "picked",
+        "promoting",
+        "reviewing",
+        "over",
+        "setting",
+        "reading",
+        "reviewed",
+        "populated-dark",
+        "network-error"
+      ]
+    },
+    {
+      "path": "/games",
+      "screen": "shelf",
+      "nav": {
+        "label": "Games"
+      },
+      "files": {
+        "html": "shell/screens/shelf.html",
+        "css": "shell/screens/shelf.css",
+        "handlers": [
+          "shell/handlers/resume.js"
+        ],
+        "adapters": [],
+        "shared": [
+          "shell/shared/paper.css"
+        ],
+        "renderers": [
+          "shell/renderers/clock.js",
+          "shell/renderers/board.js"
+        ]
+      },
+      "ssr": "spa",
+      "states": [
+        "loading",
+        "empty",
+        "populated",
+        "populated-dark"
+      ]
+    },
+    {
+      "keep": 0,
+      "path": "/game/:id",
+      "screen": "sheet",
+      "nav": {
+        "label": "Sheet",
+        "strip": false
+      },
+      "files": {
+        "html": "shell/screens/sheet.html",
+        "css": "shell/screens/sheet.css",
+        "handlers": [],
+        "adapters": [],
+        "shared": [
+          "shell/shared/paper.css"
+        ],
+        "renderers": [
+          "shell/renderers/clock.js"
+        ]
+      },
+      "ssr": "spa",
+      "states": [
+        "empty",
+        "populated",
+        "populated-dark"
+      ]
+    }
+  ],
+  "tables": [],
+  "schema": {
+    "game": {
+      "durability": "device",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMax": 64
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "house",
+            "hotseat"
+          ],
+          "name": "mode",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "nell",
+            "otto",
+            "vera",
+            "magnus",
+            "sable"
+          ],
+          "name": "bot",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "name": "level",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "bot_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "bot_line",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "print",
+            "staunton",
+            "engraved",
+            "disc"
+          ],
+          "name": "set",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "unlimited",
+            "1+0",
+            "3+2",
+            "5+0",
+            "10+0"
+          ],
+          "name": "tc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "side",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 64,
+            "sizeMax": 64,
+            "regex": "^(?:\\.|[PNBRQKpnbrqk]){64}$"
+          },
+          "name": "board",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "regex": "^K?Q?k?q?$"
+          },
+          "name": "castling",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "regex": "^([a-h][36])?$"
+          },
+          "name": "ep",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "intMin": 0,
+            "intMax": 150
+          },
+          "name": "halfmove",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 1,
+            "intMax": 9999
+          },
+          "name": "fullmove",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 20,
+            "sizeMax": 100
+          },
+          "name": "fen",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "turn",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 0
+          },
+          "name": "ply",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "enum": [
+            "playing",
+            "over"
+          ],
+          "name": "status",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "",
+            "1-0",
+            "0-1",
+            "1/2-1/2"
+          ],
+          "name": "result",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 16
+          },
+          "name": "won",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "",
+            "checkmate",
+            "stalemate",
+            "threefold",
+            "fifty-move",
+            "insufficient",
+            "resignation",
+            "flag",
+            "agreement"
+          ],
+          "name": "termination",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "check",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "selected",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "flipped",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "dragged",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "last_from",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "last_to",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "current",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 4,
+            "sizeMax": 4
+          },
+          "name": "ordinal",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "white_clock",
+          "type": "duration",
+          "required": true
+        },
+        {
+          "name": "black_clock",
+          "type": "duration",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 0
+          },
+          "name": "last_tick",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 72
+          },
+          "name": "cursor",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "",
+            "first",
+            "back",
+            "fwd",
+            "live"
+          ],
+          "name": "step",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 2
+          },
+          "name": "caret",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "",
+            "up",
+            "down",
+            "left",
+            "right",
+            "row-start",
+            "row-end",
+            "first",
+            "last"
+          ],
+          "name": "caret_go",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "promo_from",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "promo_to",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMin": 1,
+            "sizeMax": 1
+          },
+          "name": "promo_f",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1,
+            "sizeMax": 1
+          },
+          "name": "promo_r",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "none",
+            "you",
+            "declined"
+          ],
+          "name": "draw_offer",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 3
+          },
+          "name": "eco",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 48
+          },
+          "name": "opening",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 32
+          },
+          "name": "taken_white",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 32
+          },
+          "name": "taken_black",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "intMin": -39,
+            "intMax": 39
+          },
+          "name": "edge",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "reviewing",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 2000
+          },
+          "name": "pgn",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 100
+          },
+          "name": "ask",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 4
+          },
+          "name": "ask_ply",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 8
+          },
+          "name": "ask_nodes",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "",
+            "1",
+            "2"
+          ],
+          "name": "ask_lines",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "",
+            "reading",
+            "read"
+          ],
+          "name": "review",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 64
+          },
+          "name": "review_line",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 3
+          },
+          "name": "acc_low",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 3
+          },
+          "name": "acc_top",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 64
+          },
+          "name": "tally_low",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 64
+          },
+          "name": "tally_top",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "bar",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 8
+          },
+          "name": "bar_label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 24
+          },
+          "name": "note_head",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "",
+            "book",
+            "!",
+            "?!",
+            "?",
+            "??"
+          ],
+          "name": "note_mark",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 280
+          },
+          "name": "note",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 24
+          },
+          "name": "hint",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "seat_top_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "seat_top_line",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1,
+            "sizeMax": 1
+          },
+          "name": "seat_top_ini",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seat_top_clock",
+          "type": "duration",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 32
+          },
+          "name": "seat_top_taken",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 3
+          },
+          "name": "seat_top_edge",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "seat_top_turn",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "seat_top_low",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "seat_low_name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "seat_low_line",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1,
+            "sizeMax": 1
+          },
+          "name": "seat_low_ini",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seat_low_clock",
+          "type": "duration",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 32
+          },
+          "name": "seat_low_taken",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 3
+          },
+          "name": "seat_low_edge",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "seat_low_turn",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "seat_low_low",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 8
+          },
+          "name": "seat_top_elo",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 8
+          },
+          "name": "seat_low_elo",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "uniques": [
+        {
+          "name": "uq_game_current",
+          "cols": [
+            "current"
+          ],
+          "where": "current=eq.yes"
+        }
+      ]
+    },
+    "setup": {
+      "durability": "device",
+      "fields": [
+        {
+          "enum": [
+            "next"
+          ],
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "house",
+            "hotseat"
+          ],
+          "name": "mode",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "nell",
+            "otto",
+            "vera",
+            "magnus",
+            "sable"
+          ],
+          "name": "bot",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "name": "level",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "unlimited",
+            "1+0",
+            "3+2",
+            "5+0",
+            "10+0"
+          ],
+          "name": "tc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "side",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "move": {
+      "durability": "device",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMax": 72
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 64
+          },
+          "name": "game_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 1
+          },
+          "name": "ply",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 1
+          },
+          "name": "number",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "color",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 8
+          },
+          "name": "san",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 4,
+            "sizeMax": 5
+          },
+          "name": "uci",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 64,
+            "sizeMax": 64,
+            "regex": "^(?:\\.|[PNBRQKpnbrqk]){64}$"
+          },
+          "name": "board_after",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "turn_after",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "regex": "^K?Q?k?q?$"
+          },
+          "name": "castling_after",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "regex": "^([a-h][36])?$"
+          },
+          "name": "ep_after",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "intMin": 0,
+            "intMax": 150
+          },
+          "name": "halfmove_after",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 1,
+            "intMax": 9999
+          },
+          "name": "fullmove_after",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 20,
+            "sizeMax": 100
+          },
+          "name": "fen_after",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "capture",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "check",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "retracted",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "white_clock",
+          "type": "duration",
+          "required": true
+        },
+        {
+          "name": "black_clock",
+          "type": "duration",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 7
+          },
+          "name": "before",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 7
+          },
+          "name": "second",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 8
+          },
+          "name": "best",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 48
+          },
+          "name": "line",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 7
+          },
+          "name": "after",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "",
+            "book",
+            "!",
+            "?!",
+            "?",
+            "??"
+          ],
+          "name": "mark",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "tide",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    "square": {
+      "durability": "tab",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 2
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 2
+          },
+          "name": "ord",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 8,
+            "sizeMax": 24
+          },
+          "name": "label",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "light",
+            "dark"
+          ],
+          "name": "shade",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 1
+          },
+          "name": "piece",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 1
+          },
+          "name": "glyph",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "",
+            "white",
+            "black"
+          ],
+          "name": "color",
+          "type": "string",
+          "required": false
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "selected",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "target",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "capture",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "last",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "check",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "drag",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "drag_from",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 1
+          },
+          "name": "coord_file",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMax": 1
+          },
+          "name": "coord_rank",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    "piece": {
+      "durability": "tab",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMin": 4,
+            "sizeMax": 4
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1,
+            "sizeMax": 1
+          },
+          "name": "piece",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "color",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 24
+          },
+          "name": "symbol",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1,
+            "sizeMax": 1
+          },
+          "name": "initial",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 2
+          },
+          "name": "glyph",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 2
+          },
+          "name": "square",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 0,
+            "intMax": 7
+          },
+          "name": "file",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 0,
+            "intMax": 7
+          },
+          "name": "rank",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "taken",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "lit",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "legal": {
+      "durability": "tab",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMax": 72
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMax": 64
+          },
+          "name": "game_id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 0
+          },
+          "name": "ply",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 2
+          },
+          "name": "from_sq",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 2
+          },
+          "name": "to_sq",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 4,
+            "sizeMax": 5
+          },
+          "name": "uci",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 2,
+            "sizeMax": 8
+          },
+          "name": "san",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "",
+            "Q",
+            "R",
+            "B",
+            "N"
+          ],
+          "name": "promo",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "sizeMin": 64,
+            "sizeMax": 64,
+            "regex": "^(?:\\.|[PNBRQKpnbrqk]){64}$"
+          },
+          "name": "board_after",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "white",
+            "black"
+          ],
+          "name": "turn_after",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "regex": "^K?Q?k?q?$"
+          },
+          "name": "castling_after",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "regex": "^([a-h][36])?$"
+          },
+          "name": "ep_after",
+          "type": "string",
+          "required": false
+        },
+        {
+          "bounds": {
+            "intMin": 0,
+            "intMax": 150
+          },
+          "name": "halfmove_after",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 1,
+            "intMax": 9999
+          },
+          "name": "fullmove_after",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 20,
+            "sizeMax": 100
+          },
+          "name": "fen_after",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "capture",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "check",
+          "type": "string",
+          "required": true
+        },
+        {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "name": "mate",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "tick": {
+      "durability": "tab",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMax": 8
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "intMin": 0
+          },
+          "name": "n",
+          "type": "int32",
+          "required": true
+        },
+        {
+          "enum": [
+            "on"
+          ],
+          "name": "beat",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "opening": {
+      "durability": "tab",
+      "fields": [
+        {
+          "bounds": {
+            "sizeMin": 3,
+            "sizeMax": 3
+          },
+          "name": "id",
+          "pk": true,
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "bounds": {
+            "sizeMin": 1
+          },
+          "name": "uci",
+          "type": "string",
+          "required": true
+        }
+      ]
+    }
+  },
+  "types": {
+    "types": {
+      "string": {
+        "sql": "portable_string",
+        "base": [
+          "text",
+          "varchar",
+          "bpchar",
+          "tsvector"
+        ],
+        "json": "string",
+        "refuse": "\\x00",
+        "order": "text",
+        "beyond": [
+          "scalar-values"
+        ]
+      },
+      "bool": {
+        "sql": "portable_bool",
+        "base": [
+          "bool",
+          "boolean"
+        ],
+        "json": "boolean",
+        "order": "boolean",
+        "beyond": []
+      },
+      "int32": {
+        "sql": "portable_int32",
+        "base": [
+          "int2",
+          "int4",
+          "integer",
+          "smallint"
+        ],
+        "json": "number",
+        "min": -2147483648,
+        "max": 2147483647,
+        "order": "number",
+        "beyond": []
+      },
+      "int64": {
+        "sql": "portable_int64",
+        "base": [
+          "int8",
+          "bigint"
+        ],
+        "json": "string",
+        "pattern": "^(0|-?[1-9][0-9]*)$",
+        "order": "integer",
+        "beyond": [
+          "int64-range"
+        ]
+      },
+      "double": {
+        "sql": "portable_double",
+        "base": [
+          "float4",
+          "float8",
+          "double precision",
+          "real"
+        ],
+        "json": "number",
+        "order": "number",
+        "beyond": []
+      },
+      "bytes": {
+        "sql": "portable_bytes",
+        "base": [
+          "bytea"
+        ],
+        "json": "string",
+        "pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+        "order": "none",
+        "beyond": []
+      },
+      "uuid": {
+        "sql": "portable_uuid",
+        "base": [
+          "uuid"
+        ],
+        "json": "string",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "order": "text",
+        "beyond": []
+      },
+      "timestamp": {
+        "sql": "portable_timestamp",
+        "base": [
+          "timestamptz",
+          "timestamp with time zone"
+        ],
+        "json": "string",
+        "pattern": "^(000[1-9]|00[1-9][0-9]|0[1-9][0-9]{2}|[1-9][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{6}Z$",
+        "order": "text",
+        "beyond": [
+          "calendar"
+        ]
+      },
+      "duration": {
+        "sql": "portable_duration",
+        "base": [
+          "interval"
+        ],
+        "json": "string",
+        "pattern": "^PT(0|[1-9][0-9]*)(\\.[0-9]{0,5}[1-9])?S$",
+        "order": "duration",
+        "beyond": [
+          "duration-range"
+        ]
+      },
+      "decimal": {
+        "base": [
+          "numeric",
+          "decimal"
+        ],
+        "json": "string",
+        "pattern": "^(0|-?[1-9][0-9]*|-?(0|[1-9][0-9]*)\\.[0-9]*[1-9])$",
+        "order": "decimal",
+        "beyond": [
+          "decimal-profile"
+        ]
+      },
+      "date": {
+        "sql": "portable_date",
+        "base": [
+          "date"
+        ],
+        "json": "string",
+        "pattern": "^(000[1-9]|00[1-9][0-9]|0[1-9][0-9]{2}|[1-9][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+        "order": "text",
+        "beyond": [
+          "calendar"
+        ]
+      },
+      "time": {
+        "sql": "portable_time",
+        "base": [
+          "time",
+          "time without time zone"
+        ],
+        "json": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{6}$",
+        "order": "text",
+        "beyond": []
+      },
+      "timezone": {
+        "sql": "portable_timezone",
+        "base": [],
+        "json": "string",
+        "pattern": "^[A-Za-z0-9+_/-]+$",
+        "order": "none",
+        "beyond": [
+          "tzdb"
+        ]
+      },
+      "json": {
+        "sql": "portable_json",
+        "base": [
+          "json",
+          "jsonb"
+        ],
+        "json": "value",
+        "order": "none",
+        "beyond": [
+          "scalar-values",
+          "finite-numbers"
+        ]
+      },
+      "geojson": {
+        "sql": "portable_geojson",
+        "base": [
+          "geometry",
+          "geography"
+        ],
+        "json": "value",
+        "order": "none",
+        "beyond": [
+          "scalar-values",
+          "finite-numbers",
+          "ring-closure"
+        ]
+      }
+    },
+    "aliases": {
+      "text": "string",
+      "int": "int32",
+      "bigint": "int64",
+      "timestamptz": "timestamp",
+      "tsvector": "string"
+    }
+  },
+  "carriers": {
+    "types": {
+      "string": {
+        "sql": "portable_string",
+        "base": [
+          "text",
+          "varchar",
+          "bpchar",
+          "tsvector"
+        ],
+        "json": "string",
+        "refuse": "\\x00",
+        "order": "text",
+        "beyond": [
+          "scalar-values"
+        ]
+      },
+      "bool": {
+        "sql": "portable_bool",
+        "base": [
+          "bool",
+          "boolean"
+        ],
+        "json": "boolean",
+        "order": "boolean",
+        "beyond": []
+      },
+      "int32": {
+        "sql": "portable_int32",
+        "base": [
+          "int2",
+          "int4",
+          "integer",
+          "smallint"
+        ],
+        "json": "number",
+        "min": -2147483648,
+        "max": 2147483647,
+        "order": "number",
+        "beyond": []
+      },
+      "int64": {
+        "sql": "portable_int64",
+        "base": [
+          "int8",
+          "bigint"
+        ],
+        "json": "string",
+        "pattern": "^(0|-?[1-9][0-9]*)$",
+        "order": "integer",
+        "beyond": [
+          "int64-range"
+        ]
+      },
+      "double": {
+        "sql": "portable_double",
+        "base": [
+          "float4",
+          "float8",
+          "double precision",
+          "real"
+        ],
+        "json": "number",
+        "order": "number",
+        "beyond": []
+      },
+      "bytes": {
+        "sql": "portable_bytes",
+        "base": [
+          "bytea"
+        ],
+        "json": "string",
+        "pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+        "order": "none",
+        "beyond": []
+      },
+      "uuid": {
+        "sql": "portable_uuid",
+        "base": [
+          "uuid"
+        ],
+        "json": "string",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "order": "text",
+        "beyond": []
+      },
+      "timestamp": {
+        "sql": "portable_timestamp",
+        "base": [
+          "timestamptz",
+          "timestamp with time zone"
+        ],
+        "json": "string",
+        "pattern": "^(000[1-9]|00[1-9][0-9]|0[1-9][0-9]{2}|[1-9][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{6}Z$",
+        "order": "text",
+        "beyond": [
+          "calendar"
+        ]
+      },
+      "duration": {
+        "sql": "portable_duration",
+        "base": [
+          "interval"
+        ],
+        "json": "string",
+        "pattern": "^PT(0|[1-9][0-9]*)(\\.[0-9]{0,5}[1-9])?S$",
+        "order": "duration",
+        "beyond": [
+          "duration-range"
+        ]
+      },
+      "decimal": {
+        "base": [
+          "numeric",
+          "decimal"
+        ],
+        "json": "string",
+        "pattern": "^(0|-?[1-9][0-9]*|-?(0|[1-9][0-9]*)\\.[0-9]*[1-9])$",
+        "order": "decimal",
+        "beyond": [
+          "decimal-profile"
+        ]
+      },
+      "date": {
+        "sql": "portable_date",
+        "base": [
+          "date"
+        ],
+        "json": "string",
+        "pattern": "^(000[1-9]|00[1-9][0-9]|0[1-9][0-9]{2}|[1-9][0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+        "order": "text",
+        "beyond": [
+          "calendar"
+        ]
+      },
+      "time": {
+        "sql": "portable_time",
+        "base": [
+          "time",
+          "time without time zone"
+        ],
+        "json": "string",
+        "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\\.[0-9]{6}$",
+        "order": "text",
+        "beyond": []
+      },
+      "timezone": {
+        "sql": "portable_timezone",
+        "base": [],
+        "json": "string",
+        "pattern": "^[A-Za-z0-9+_/-]+$",
+        "order": "none",
+        "beyond": [
+          "tzdb"
+        ]
+      },
+      "json": {
+        "sql": "portable_json",
+        "base": [
+          "json",
+          "jsonb"
+        ],
+        "json": "value",
+        "order": "none",
+        "beyond": [
+          "scalar-values",
+          "finite-numbers"
+        ]
+      },
+      "geojson": {
+        "sql": "portable_geojson",
+        "base": [
+          "geometry",
+          "geography"
+        ],
+        "json": "value",
+        "order": "none",
+        "beyond": [
+          "scalar-values",
+          "finite-numbers",
+          "ring-closure"
+        ]
+      }
+    },
+    "aliases": {
+      "text": "string",
+      "int": "int32",
+      "bigint": "int64",
+      "timestamptz": "timestamp",
+      "tsvector": "string"
+    }
+  },
+  "migrations": [],
+  "pipelines": [],
+  "units": {
+    "stockfish": {
+      "isolation": "worker",
+      "capabilities": [],
+      "src": "shell/units/stockfish/unit.js"
+    }
+  }
+}

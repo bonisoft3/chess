@@ -1,0 +1,106 @@
+@import url("shared/paper.css");
+
+[data-screen="sheet"] {
+  display: grid;
+  gap: var(--sp-sm);
+  padding: var(--sp-md) var(--sp-md) var(--sp-xl);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+[data-screen="sheet"] .back { margin: 0; font-size: 0.875rem; }
+[data-screen="sheet"] .back a { color: var(--secondary); text-decoration: none; }
+[data-screen="sheet"] .back a:hover { color: var(--primary); }
+
+[data-screen="sheet"] .masthead[data-mode="house"] .title i[data-m="house"],
+[data-screen="sheet"] .masthead[data-mode="hotseat"] .title i[data-m="hotseat"] { display: inline; }
+[data-screen="sheet"] .masthead[data-termination="checkmate"] .sub i[data-e="checkmate"],
+[data-screen="sheet"] .masthead[data-termination="stalemate"] .sub i[data-e="stalemate"],
+[data-screen="sheet"] .masthead[data-termination="threefold"] .sub i[data-e="threefold"],
+[data-screen="sheet"] .masthead[data-termination="fifty-move"] .sub i[data-e="fifty-move"],
+[data-screen="sheet"] .masthead[data-termination="insufficient"] .sub i[data-e="insufficient"],
+[data-screen="sheet"] .masthead[data-termination="resignation"] .sub i[data-e="resignation"],
+[data-screen="sheet"] .masthead[data-termination=""] .sub i[data-e=""] { display: inline; }
+/* "unlimited" is the column's value, not a reading: the sheet calls it what
+   the picker calls it. */
+[data-screen="sheet"] .masthead[data-tc="unlimited"] .tcv b { display: none; }
+[data-screen="sheet"] .masthead[data-tc="unlimited"] .tcv i { display: inline; }
+/* Direct children only: an <i> nested inside one of the spans is already
+   separated by the span it sits in, and would otherwise print a second one. */
+[data-screen="sheet"] .sub > i::before,
+[data-screen="sheet"] .sub > span + span::before { content: " · "; }
+/* A game whose moves name no line has no line to print, and a separator on
+   its own is what a whitespace-only binding leaves behind. */
+[data-screen="sheet"] .sub .book i { display: inline; font-style: normal; }
+[data-screen="sheet"] .sub .book:has(i:empty) { display: none; }
+
+/* Two columns, set the way a column is set: white then black, the number
+   printed once for the pair, and each move's clock beside it. A half-move
+   carries both clock columns and prints only its own — the other is the
+   reading it did not take. */
+[data-screen="sheet"] .sheet {
+  margin: 0;
+  padding: var(--sp-sm) 0 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(3.5rem, auto) auto minmax(3.5rem, auto) auto;
+  align-content: start;
+  justify-content: start;
+  column-gap: 10px;
+  row-gap: 3px;
+}
+/* A sheet with nothing on it needs no rule above the saying so: the
+   masthead's is twenty pixels up, and two rules with nothing between them
+   read as a mistake. */
+[data-screen="sheet"] .sheet:has(.empty) { border-top: 0; padding-top: 0; }
+[data-screen="sheet"] .sheet li { display: contents; }
+/* See board.css: `display: contents` would set this line in the move-number
+   track. */
+[data-screen="sheet"] .sheet li.empty { display: block; grid-column: 1 / -1; color: var(--secondary); }
+[data-screen="sheet"] .sheet .no { grid-column: 1; color: var(--secondary); }
+[data-screen="sheet"] .sheet li[data-color="black"] .no { display: none; }
+[data-screen="sheet"] .sheet li[data-color="white"] .san { grid-column: 2; }
+[data-screen="sheet"] .sheet li[data-color="white"] .ms.w { grid-column: 3; }
+[data-screen="sheet"] .sheet li[data-color="black"] .san { grid-column: 4; }
+[data-screen="sheet"] .sheet li[data-color="black"] .ms.b { grid-column: 5; }
+/* The half-move a row is not: without this the unplaced span flows into the
+   next cell and takes the following move's column with it. */
+[data-screen="sheet"] .sheet li[data-color="white"] .ms.b,
+[data-screen="sheet"] .sheet li[data-color="black"] .ms.w { display: none; }
+[data-screen="sheet"] .sheet .no::after { content: "."; }
+[data-screen="sheet"] .sheet .ms { font-size: 0.8125rem; color: var(--secondary); text-align: right; }
+/* Nothing was counting, so every reading would print 0:00. The columns are
+   placed by hand, so removing one shifts nothing. */
+[data-screen="sheet"]:has(.masthead[data-tc="unlimited"]) .sheet .ms { display: none; }
+/* The gap that groups: a move and its clock are one reading, and the pair for
+   white must not run into black's. */
+[data-screen="sheet"] .sheet .ms.w { margin-right: var(--sp-lg); }
+
+[data-screen="sheet"] .outcome {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-sm);
+  margin: 0;
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--border);
+  font-size: 1.25rem;
+}
+[data-screen="sheet"] .outcome .won { font-size: 0.9375rem; color: var(--secondary); }
+[data-screen="sheet"] .outcome:has(.score:empty) { display: none; }
+
+[data-screen="sheet"] .sect { margin: var(--sp-lg) 0 var(--sp-sm); font: 600 1rem/1.2 var(--serif); }
+/* The two strings any other board can read. One click takes the whole of
+   either — a partial PGN is a PGN that will not open. */
+[data-screen="sheet"] .pgn,
+[data-screen="sheet"] .fen {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  font: 0.8125rem/1.6 var(--mono);
+  word-break: break-word;
+  user-select: all;
+  cursor: text;
+}

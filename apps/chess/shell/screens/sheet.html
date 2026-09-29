@@ -1,0 +1,40 @@
+<section class="screen" data-screen="sheet">
+
+  <p class="back"><a data-route="shelf">‹ Games</a></p>
+
+  <div class="head" data-live="game" data-filter="id=eq.{param.id}">
+    <template data-item>
+      <header class="masthead" data-mode="{mode}" data-side="{side}" data-termination="{termination}" data-tc="{tc}">
+        <h1 class="title">
+          <i data-m="house">You — <b data-text="{bot_name}"></b></i><i data-m="hotseat">Two players</i>
+        </h1>
+        <p class="sub">
+          <span>Game <b data-text="{ordinal}"></b></span>
+          <span class="tcv"><b data-text="{tc}"></b><i>No clock</i></span>
+          <span class="book"><b data-text="{eco}"></b> <i data-text="{opening}"></i></span>
+          <i data-e="checkmate">checkmate</i><i data-e="stalemate">stalemate</i><i data-e="threefold">draw by repetition</i><i data-e="fifty-move">draw by the fifty-move rule</i><i data-e="insufficient">draw, too little left to mate</i><i data-e="resignation">resigned</i><i data-e="flag">a flag fell</i><i data-e="agreement">draw agreed</i><i data-e="">unfinished</i>
+        </p>
+      </header>
+    </template>
+  </div>
+
+  <ol class="sheet" data-live="move" data-order="ply.asc" data-filter="game_id=eq.{param.id}&amp;retracted=eq.no"
+      data-empty="No moves were played in this game.">
+    <template data-item>
+      <li data-color="{color}"><b class="no" data-text="{number}"></b><span class="san"><span data-text="{san}"></span><b class="mk" data-mark="{mark}" data-text="{mark}"></b></span><span class="ms w" data-text="{white_ms}" data-text-format="clock"></span><span class="ms b" data-text="{black_ms}" data-text-format="clock"></span></li>
+    </template>
+  </ol>
+
+  <div class="foot" data-live="game" data-filter="id=eq.{param.id}">
+    <template data-item>
+      <div class="close">
+        <p class="outcome"><span class="score" data-text="{result}"></span><span class="won" data-text="{won}"></span></p>
+        <h2 class="sect">The game</h2>
+        <p class="pgn" data-text="{pgn}"></p>
+        <h2 class="sect">The final position</h2>
+        <p class="fen" data-text="{fen}"></p>
+      </div>
+    </template>
+  </div>
+
+</section>

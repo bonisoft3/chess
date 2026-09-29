@@ -1,0 +1,126 @@
+@import url("shared/paper.css");
+
+[data-screen="shelf"] {
+  display: grid;
+  gap: var(--sp-sm);
+  padding: var(--sp-md);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+[data-screen="shelf"] .sect {
+  margin: var(--sp-md) 0 0;
+  font: 600 0.6875rem/1 var(--shell-font, system-ui), sans-serif;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+/* The boards still standing, each with the position on it: at a glance, a
+   thumbnail is what tells one game from another. */
+[data-screen="shelf"] .standing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--sp-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+[data-screen="shelf"] .card {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: var(--sp-sm);
+  padding: var(--sp-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+}
+[data-screen="shelf"] .card[data-current="yes"] { border-color: var(--primary); }
+
+/* The renderer's own markup: sixty-four cells and whatever stands on them. */
+[data-screen="shelf"] .mini {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 104px;
+  aspect-ratio: 1;
+  border: 1px solid var(--primary);
+}
+[data-screen="shelf"] .mc { display: grid; place-items: center; }
+[data-screen="shelf"] .mc.light { background: var(--surface); }
+[data-screen="shelf"] .mc.dark { background: var(--surface-muted); }
+[data-screen="shelf"] .mp { font-size: 11px; line-height: 1; }
+[data-screen="shelf"] .mp.b { color: var(--primary); }
+[data-screen="shelf"] .mp.w { color: var(--surface); -webkit-text-stroke: 0.6px var(--primary); }
+
+[data-screen="shelf"] .meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+[data-screen="shelf"] .who { display: flex; flex-direction: column; }
+[data-screen="shelf"] .who b { font-size: 0.9375rem; }
+[data-screen="shelf"] .who span { font-size: 0.75rem; color: var(--secondary); }
+[data-screen="shelf"] .line b { font-family: var(--mono); font-size: 0.6875rem; color: var(--secondary); margin-right: 6px; }
+[data-screen="shelf"] .line span { font: 600 0.875rem/1 var(--serif); }
+[data-screen="shelf"] .line:has(span:empty) { display: none; }
+[data-screen="shelf"] .stat { display: flex; align-items: baseline; gap: var(--sp-sm); margin-top: auto; }
+[data-screen="shelf"] .how { font-size: 0.75rem; color: var(--secondary); }
+[data-screen="shelf"] .card .clk { margin-left: auto; font: 600 0.9375rem/1 var(--mono); color: var(--secondary); }
+/* Nothing is counting, so there is no reading — an empty clock reads as one
+   that has stopped. */
+[data-screen="shelf"] .card[data-tc="unlimited"] .clk { display: none; }
+[data-screen="shelf"] .acts { display: flex; align-items: center; gap: var(--sp-sm); margin-top: 2px; }
+[data-screen="shelf"] .go, [data-screen="shelf"] .on-board {
+  min-height: 30px; padding: 0 11px; font-size: 0.8125rem;
+}
+[data-screen="shelf"] .on-board { display: none; background: var(--primary); color: var(--surface); border-color: var(--primary); }
+[data-screen="shelf"] .card[data-current="yes"] .go { display: none; }
+[data-screen="shelf"] .card[data-current="yes"] .on-board { display: inline-flex; }
+[data-screen="shelf"] .sheet-link { display: inline-flex; align-items: center; min-height: 24px; font-size: 0.8125rem; color: var(--secondary); }
+[data-screen="shelf"] .sheet-link:hover { color: var(--primary); }
+
+[data-screen="shelf"] .card .how i { display: none; }
+[data-screen="shelf"] .card[data-turn="white"] .how i[data-t="white"],
+[data-screen="shelf"] .card[data-turn="black"] .how i[data-t="black"] { display: inline; }
+
+/* The games written down: rules, not cards. */
+[data-screen="shelf"] .shelf { margin: 0; padding: 0; list-style: none; }
+[data-screen="shelf"] .entry + .entry { border-top: 1px solid var(--border); }
+/* The row reads the game back; the button beside it takes the game up onto the
+   board, which is where a finished game is reviewed. */
+[data-screen="shelf"] .entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--sp-md); }
+[data-screen="shelf"] .take { min-height: 30px; padding: 0 11px; font-size: 0.8125rem; }
+[data-screen="shelf"] .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px var(--sp-sm);
+  padding: var(--sp-sm) 0;
+  min-height: 44px;
+  align-items: baseline;
+  color: inherit;
+  text-decoration: none;
+}
+[data-screen="shelf"] .players { font-weight: 600; }
+[data-screen="shelf"] .score { text-align: right; font-family: var(--mono); }
+[data-screen="shelf"] .entry .how, [data-screen="shelf"] .when, [data-screen="shelf"] .entry .book {
+  font-size: 0.8125rem; color: var(--secondary);
+}
+[data-screen="shelf"] .when { text-align: right; }
+/* See sheet.css: the picker's word for it, not the column's value. */
+[data-screen="shelf"] .tcv i { display: none; font-style: normal; }
+[data-screen="shelf"] .tcv[data-tc="unlimited"] b { display: none; }
+[data-screen="shelf"] .tcv[data-tc="unlimited"] i { display: inline; }
+[data-screen="shelf"] .entry .book { grid-column: 1 / -1; }
+
+[data-screen="shelf"] .entry[data-side="white"] .players i[data-s="white"],
+[data-screen="shelf"] .entry[data-side="black"] .players i[data-s="black"] { display: inline; }
+[data-screen="shelf"] .entry[data-termination="checkmate"] .how i[data-e="checkmate"],
+[data-screen="shelf"] .entry[data-termination="stalemate"] .how i[data-e="stalemate"],
+[data-screen="shelf"] .entry[data-termination="threefold"] .how i[data-e="threefold"],
+[data-screen="shelf"] .entry[data-termination="fifty-move"] .how i[data-e="fifty-move"],
+[data-screen="shelf"] .entry[data-termination="insufficient"] .how i[data-e="insufficient"],
+[data-screen="shelf"] .entry[data-termination="resignation"] .how i[data-e="resignation"],
+[data-screen="shelf"] .entry[data-termination="flag"] .how i[data-e="flag"],
+[data-screen="shelf"] .entry[data-termination="agreement"] .how i[data-e="agreement"] { display: inline; }
+
+/* The way out, and only when there is no board to go back to. The screen's own
+   empty state is no help here: two regions render on this page and one of them
+   is routinely empty while the other is not. */
+[data-screen="shelf"] .cta { display: none; margin: var(--sp-md) 0 0; }
+[data-screen="shelf"]:has(.standing .empty) .cta { display: block; }

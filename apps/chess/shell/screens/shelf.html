@@ -1,0 +1,63 @@
+<section class="screen" data-screen="shelf">
+
+  <header class="masthead">
+    <h1 class="title">Games</h1>
+    <p class="sub">Your games, in progress and finished.</p>
+  </header>
+
+  <p class="sect">In progress</p>
+  <ol class="standing" data-live="game" data-order="ordinal.desc" data-filter="status=eq.playing"
+      data-on-click="resume" data-reads="game"
+      data-empty="No games in progress — start one from Play.">
+    <template data-item>
+      <li class="card" data-current="{current}" data-mode="{mode}" data-side="{side}" data-turn="{turn}" data-tc="{tc}">
+        <span class="board" data-text="{fen}" data-text-format="board"></span>
+        <span class="meta">
+          <span class="who">
+            <b data-text="{seat_top_name}"></b><span data-text="{seat_top_line}"></span>
+          </span>
+          <span class="line"><b data-text="{eco}"></b><span data-text="{opening}"></span></span>
+          <span class="stat">
+            <span class="how">
+              <i data-t="white">White to move</i><i data-t="black">Black to move</i>
+              · <b data-text="{ply}"></b> played
+            </span>
+            <span class="clk" data-text="{seat_low_clock}" data-text-format="clock"></span>
+          </span>
+          <span class="acts">
+            <a class="act ghost go" data-route="board" data-on-click="resume">Resume</a>
+            <span class="act on-board">Playing now</span>
+            <a class="sheet-link" data-route="sheet" data-param-id="{id}">Score sheet</a>
+          </span>
+        </span>
+      </li>
+    </template>
+  </ol>
+
+  <p class="sect">Finished</p>
+  <!-- A finished game can be taken back up onto the board, where it is
+       reviewed (ir decision-24): the same resume as a board still standing. -->
+  <ol class="shelf" data-live="game" data-order="ordinal.desc" data-filter="status=eq.over"
+      data-on-click="resume" data-reads="game"
+      data-empty="Nothing finished yet.">
+    <template data-item>
+      <li class="entry" data-side="{side}" data-mode="{mode}" data-termination="{termination}">
+        <a class="row" data-route="sheet" data-param-id="{id}">
+          <span class="players">
+            <i data-s="white">You (White) — <b data-text="{seat_top_name}"></b></i><i data-s="black"><b data-text="{seat_top_name}"></b> — You (Black)</i>
+          </span>
+          <span class="score" data-text="{result}"></span>
+          <span class="how">
+            <i data-e="checkmate">Checkmate</i><i data-e="stalemate">Stalemate</i><i data-e="threefold">Repetition</i><i data-e="fifty-move">Fifty-move rule</i><i data-e="insufficient">Too little left</i><i data-e="resignation">Resigned</i><i data-e="flag">A flag fell</i><i data-e="agreement">Draw agreed</i>
+          </span>
+          <span class="when"><span class="tcv" data-tc="{tc}"><b data-text="{tc}"></b><i>No clock</i></span> · Game <b data-text="{ordinal}"></b></span>
+          <span class="book" data-text="{eco} {opening}"></span>
+        </a>
+        <a class="act ghost take" data-route="board" data-on-click="resume">Review</a>
+      </li>
+    </template>
+  </ol>
+
+  <p class="cta"><a class="act" data-route="board">Play</a></p>
+
+</section>

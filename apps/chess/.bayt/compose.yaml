@@ -1,0 +1,38 @@
+# generated from bayt.cue — do not edit
+include:
+- path: ./compose.bayt.yaml
+  required: false
+services:
+  setup:
+    extends:
+      file: ./compose.setup.yaml
+      service: apps_chess-setup
+    profiles:
+    - setup
+  build:
+    extends:
+      file: ./compose.build.yaml
+      service: apps_chess-build
+    profiles:
+    - build
+  launch:
+    extends:
+      file: ./compose.launch.yaml
+      service: apps_chess-launch
+    profiles:
+    - launch
+    scale: 1
+  integrate:
+    extends:
+      file: ./compose.integrate.yaml
+      service: apps_chess-integrate
+    profiles:
+    - integrate
+    scale: 1
+  caddy:
+    extends:
+      file: ./compose.caddy.yaml
+      service: apps_chess-caddy
+    profiles:
+    - caddy
+    scale: 1

@@ -1,0 +1,346 @@
+{
+  "method": {
+    "model": "Bradley-Terry / logistic Elo, P = 1/(1+10^(-(Ri-Rj)/400)), draws = 1/2",
+    "anchors_fixed": {
+      "sf1320": 1320,
+      "sf1800": 1800,
+      "sf2400": 2400,
+      "sf2800": 2800
+    },
+    "prior": "1 virtual draw per played pairing",
+    "error": "1 s.e. from inverse observed information",
+    "games": 432
+  },
+  "ratings": {
+    "nell": {
+      "elo": 681,
+      "se": 100,
+      "shown": "700"
+    },
+    "otto": {
+      "elo": 1057,
+      "se": 61,
+      "shown": "1050"
+    },
+    "vera": {
+      "elo": 1338,
+      "se": 48,
+      "shown": "1350"
+    },
+    "magnus": {
+      "elo": 1487,
+      "se": 49,
+      "shown": "1500"
+    },
+    "sable": {
+      "elo": 3027,
+      "se": 79,
+      "shown": "2800+"
+    }
+  },
+  "record": {
+    "nell": {
+      "total": {
+        "n": 120,
+        "score": 1.5,
+        "w": 0,
+        "d": 3,
+        "l": 117
+      },
+      "vs": [
+        {
+          "vs": "magnus",
+          "n": 24,
+          "score": 0,
+          "w": 0,
+          "d": 0,
+          "l": 24
+        },
+        {
+          "vs": "otto",
+          "n": 24,
+          "score": 1.5,
+          "w": 0,
+          "d": 3,
+          "l": 21
+        },
+        {
+          "vs": "sable",
+          "n": 24,
+          "score": 0,
+          "w": 0,
+          "d": 0,
+          "l": 24
+        },
+        {
+          "vs": "sf1320",
+          "n": 24,
+          "score": 0,
+          "w": 0,
+          "d": 0,
+          "l": 24
+        },
+        {
+          "vs": "vera",
+          "n": 24,
+          "score": 0,
+          "w": 0,
+          "d": 0,
+          "l": 24
+        }
+      ],
+      "performance_vs_anchor": {
+        "sf1320": 644
+      }
+    },
+    "otto": {
+      "total": {
+        "n": 120,
+        "score": 30.5,
+        "w": 24,
+        "d": 13,
+        "l": 83
+      },
+      "vs": [
+        {
+          "vs": "magnus",
+          "n": 24,
+          "score": 1.5,
+          "w": 0,
+          "d": 3,
+          "l": 21
+        },
+        {
+          "vs": "nell",
+          "n": 24,
+          "score": 22.5,
+          "w": 21,
+          "d": 3,
+          "l": 0
+        },
+        {
+          "vs": "sable",
+          "n": 24,
+          "score": 0,
+          "w": 0,
+          "d": 0,
+          "l": 24
+        },
+        {
+          "vs": "sf1320",
+          "n": 24,
+          "score": 4.5,
+          "w": 3,
+          "d": 3,
+          "l": 18
+        },
+        {
+          "vs": "vera",
+          "n": 24,
+          "score": 2,
+          "w": 0,
+          "d": 4,
+          "l": 20
+        }
+      ],
+      "performance_vs_anchor": {
+        "sf1320": 1079
+      }
+    },
+    "vera": {
+      "total": {
+        "n": 144,
+        "score": 64.5,
+        "w": 55,
+        "d": 19,
+        "l": 70
+      },
+      "vs": [
+        {
+          "vs": "magnus",
+          "n": 24,
+          "score": 7,
+          "w": 1,
+          "d": 12,
+          "l": 11
+        },
+        {
+          "vs": "nell",
+          "n": 24,
+          "score": 24,
+          "w": 24,
+          "d": 0,
+          "l": 0
+        },
+        {
+          "vs": "otto",
+          "n": 24,
+          "score": 22,
+          "w": 20,
+          "d": 4,
+          "l": 0
+        },
+        {
+          "vs": "sable",
+          "n": 24,
+          "score": 0,
+          "w": 0,
+          "d": 0,
+          "l": 24
+        },
+        {
+          "vs": "sf1320",
+          "n": 24,
+          "score": 10.5,
+          "w": 9,
+          "d": 3,
+          "l": 12
+        },
+        {
+          "vs": "sf1800",
+          "n": 24,
+          "score": 1,
+          "w": 1,
+          "d": 0,
+          "l": 23
+        }
+      ],
+      "performance_vs_anchor": {
+        "sf1320": 1278,
+        "sf1800": 1322
+      }
+    },
+    "magnus": {
+      "total": {
+        "n": 144,
+        "score": 84,
+        "w": 72,
+        "d": 24,
+        "l": 48
+      },
+      "vs": [
+        {
+          "vs": "nell",
+          "n": 24,
+          "score": 24,
+          "w": 24,
+          "d": 0,
+          "l": 0
+        },
+        {
+          "vs": "otto",
+          "n": 24,
+          "score": 22.5,
+          "w": 21,
+          "d": 3,
+          "l": 0
+        },
+        {
+          "vs": "sable",
+          "n": 24,
+          "score": 0.5,
+          "w": 0,
+          "d": 1,
+          "l": 23
+        },
+        {
+          "vs": "sf1320",
+          "n": 24,
+          "score": 17,
+          "w": 14,
+          "d": 6,
+          "l": 4
+        },
+        {
+          "vs": "sf1800",
+          "n": 24,
+          "score": 3,
+          "w": 2,
+          "d": 2,
+          "l": 20
+        },
+        {
+          "vs": "vera",
+          "n": 24,
+          "score": 17,
+          "w": 11,
+          "d": 12,
+          "l": 1
+        }
+      ],
+      "performance_vs_anchor": {
+        "sf1320": 1467,
+        "sf1800": 1485
+      }
+    },
+    "sable": {
+      "total": {
+        "n": 144,
+        "score": 141,
+        "w": 138,
+        "d": 6,
+        "l": 0
+      },
+      "vs": [
+        {
+          "vs": "magnus",
+          "n": 24,
+          "score": 23.5,
+          "w": 23,
+          "d": 1,
+          "l": 0
+        },
+        {
+          "vs": "nell",
+          "n": 24,
+          "score": 24,
+          "w": 24,
+          "d": 0,
+          "l": 0
+        },
+        {
+          "vs": "otto",
+          "n": 24,
+          "score": 24,
+          "w": 24,
+          "d": 0,
+          "l": 0
+        },
+        {
+          "vs": "sf2400",
+          "n": 24,
+          "score": 23.5,
+          "w": 23,
+          "d": 1,
+          "l": 0
+        },
+        {
+          "vs": "sf2800",
+          "n": 24,
+          "score": 22,
+          "w": 20,
+          "d": 4,
+          "l": 0
+        },
+        {
+          "vs": "vera",
+          "n": 24,
+          "score": 24,
+          "w": 24,
+          "d": 0,
+          "l": 0
+        }
+      ],
+      "performance_vs_anchor": {
+        "sf2400": 2952,
+        "sf2800": 3182
+      }
+    }
+  },
+  "terminations": {
+    "checkmate": 390,
+    "ply-cap": 9,
+    "threefold": 32,
+    "insufficient": 1
+  }
+}

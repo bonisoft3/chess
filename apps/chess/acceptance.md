@@ -1,0 +1,59 @@
+# Acceptance
+
+- [ ] Opening the app lands on a board that is already set, with white to move and no sign-in. {#accept-board-ready}
+- [ ] Tapping one of your pieces marks it, and marks every square it may move to. {#accept-show-moves}
+- [ ] Tapping a marked square plays the move: the piece is there, the square it left is empty, and the move is on the sheet. {#accept-play-move}
+- [ ] Dragging a piece onto a square it may reach plays the same move a tap would. {#accept-drag-move}
+- [ ] Tapping anywhere that is not a move for the marked piece puts it back down. {#accept-put-down}
+- [ ] A piece is never offered a square the rules forbid — a pinned piece stays put, and a king is never offered a square that is attacked. {#accept-only-legal}
+- [ ] Castling is offered on both sides while the rights stand, the squares between are empty, and the king neither stands in nor passes through check. {#accept-castling}
+- [ ] A pawn that has just stepped two squares may be taken en passant on the next move and not after. {#accept-en-passant}
+- [ ] A pawn reaching the far rank asks which piece it becomes, and the sheet says which was chosen. {#accept-promotion}
+- [ ] The moves so far are written in real notation, with the disambiguating file or rank where two pieces could have reached the square. {#accept-notation}
+- [ ] A move that gives check is marked, and the checked king is marked on the board. {#accept-check-mark}
+- [ ] Both clocks are on screen, the side to move counts down, and an increment is added after each move that side makes. {#accept-clock-runs}
+- [ ] The clock starts only once both sides have moved. {#accept-clock-starts-late}
+- [ ] A clock reaching zero ends the game, and the board says who flagged. {#accept-flag-loses}
+- [ ] A flag against a side with too little material to mate is a draw, not a loss. {#accept-flag-insufficient}
+- [ ] The time control can be chosen before a game and it is on the shelf beside the result. {#accept-time-control}
+- [ ] What each side has taken is shown, with the material difference beside whoever is ahead. {#accept-captures}
+- [ ] The opening is named as soon as the moves name one, on the board and on the sheet. {#accept-opening-named}
+- [ ] Clicking a move on the sheet shows the position after it, and the left and right arrow keys step through the game. {#accept-move-list-navigable}
+- [ ] While an old position is being looked at, nothing can be played, and one button returns to the game. {#accept-review-is-read-only}
+- [ ] Taking a move back against the house removes it from the sheet and puts the position back, and the record still holds it, marked. {#accept-takeback}
+- [ ] Taking back is not offered when two people share the board. {#accept-no-takeback-hotseat}
+- [ ] Offering a draw is answered by the house: accepted when it is not better, declined when it is. {#accept-draw-offer}
+- [ ] Checkmate ends the game, names the winner, and leaves the mating position on the board. {#accept-checkmate}
+- [ ] Stalemate ends the game as a draw and says so. {#accept-stalemate}
+- [ ] A position reached three times ends the game as a draw by repetition. {#accept-threefold}
+- [ ] Fifty moves by each side with no capture and no pawn move ends the game as a draw. {#accept-fifty-move}
+- [ ] A board with too little left on it to force mate ends the game as a draw. {#accept-insufficient}
+- [ ] Resigning ends the game at once and gives it to the other side. {#accept-resign}
+- [ ] The house answers within a beat at every level, and a stronger level plays a better move than a weaker one in a position that has one. {#accept-house-levels}
+- [ ] Switching to two at one board hands both sides to the people at the table, mid-game and without disturbing the position. {#accept-hotseat}
+- [ ] Turning the board around — at any moment, a finished game under review included — puts black at the bottom, and the pieces, the coordinates and the moves all agree. {#accept-flip-board}
+- [ ] The last move played stays marked on the board until the next one is made. {#accept-last-move}
+- [ ] Asking for a new game opens a card with the next game's settings, and Start sets the board again on them. {#accept-new-game}
+- [ ] The opponent, the clock and your colour for the next game can be chosen from New game at any moment — before any game, during one on either side, after it ends, and while one is being reviewed. {#accept-choose-any-time}
+- [ ] A game's record never changes after it starts: the opponent, the clock and the sides it was played with are the ones the board, the shelf and the sheet name, whatever is chosen for the next. {#accept-record-fixed}
+- [ ] The very first game, before anything has been chosen, is against Otto, with you as White, at 5+0. {#accept-first-game}
+- [ ] A finished game says how it ended in a line that stays put, and offers another. {#accept-game-over-banner}
+- [ ] A game interrupted is still there after the tab is closed and opened again, at the position and on the clock it was left. {#accept-game-survives}
+- [ ] The shelf lists every game played, newest first, with its colours, its result, how it ended, its time control and its opening. {#accept-shelf-lists-games}
+- [ ] A shelf with nothing on it says so and points at the board. {#accept-shelf-empty}
+- [ ] Opening a game from the shelf shows its sheet: numbered moves in two columns with the clock beside each, and the result at the foot. {#accept-sheet-reads-back}
+- [ ] The sheet carries the game as PGN and the final position as FEN, both readable by any other board. {#accept-pgn-and-fen}
+- [ ] The board offers no evaluation, no arrows and no suggested move while a game is on. {#accept-no-advice}
+- [ ] A finished game offers a review — on the board when it ends, and from the shelf at any time after — and a game still being played is never read by the house. {#accept-review-offered}
+- [ ] Once reviewed, every move carries its mark beside it — `??`, `?`, `?!`, `!` or none — on the board's move list and on the sheet, and the book moves carry none. {#accept-review-marks}
+- [ ] On a marked move, the review says what the move cost and what the house would have played instead, in notation and as an arrow on the board. {#accept-review-better-move}
+- [ ] The review gives each side's accuracy and how many of each mark it collected, and a strip of winning chances across the whole game. {#accept-review-accuracy}
+- [ ] Reviewing the same game twice gives the same marks and the same accuracy. {#accept-review-same-marks}
+- [ ] In review, the chances at the position being looked at stand as a bar down the side of the board. {#accept-review-bar}
+- [ ] On a laptop or desktop screen the whole game — both players, the board, the moves and every control — fits the window, with nothing to scroll. {#accept-fits-window}
+- [ ] A move animates only the piece that moved, and the rook when castling; nothing else on the board slides. {#accept-one-piece-travels}
+- [ ] Each computer opponent shows its strength as an Elo rating, and that rating was measured, not guessed. {#accept-bot-elo}
+- [ ] Every word on screen is written for a player; none of it describes how the app is built. {#accept-plain-words}
+- [ ] After the first load the app makes no network request: a game played with the network cut plays to the end. {#accept-offline}
+- [ ] Every screen renders correctly in both light and dark appearance. {#accept-dark-twin}
+- [ ] Nothing on the board is smaller than a thumb, and every animation collapses under reduced motion. {#accept-touch-and-motion}
