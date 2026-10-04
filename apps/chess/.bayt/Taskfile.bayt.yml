@@ -1,5 +1,9 @@
 # generated from bayt.cue — do not edit
 includes:
+  browser:
+    taskfile: ./Taskfile.browser.yaml
+    dir: ../
+    optional: true
   setup:
     taskfile: ./Taskfile.setup.yaml
     dir: ../
@@ -18,6 +22,10 @@ includes:
     optional: true
   integrate:
     taskfile: ./Taskfile.integrate.yaml
+    dir: ../
+    optional: true
+  check-window:
+    taskfile: ./Taskfile.check-window.yaml
     dir: ../
     optional: true
   workspaceroot:

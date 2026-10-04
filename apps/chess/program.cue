@@ -874,22 +874,18 @@ loop: surface: checks: "board": {
 	note: "the whole board mounted against the emitted markup and the emitted handler: a move played by tapping, the house's answer, and a position that settles"
 }
 
+terminal: surface: renderers: ["shell/renderers/board.js", "shell/renderers/clock.js"]
+
+build: (pronto.#DefaultBuild & {"code": code, "loop": loop, "cluster": cluster}).out
+
 // Layout is a browser's to decide, so the one fact about the whole screen's
 // geometry is checked against the launched stack (ir decision-27).
-loop: surface: checks: "window": {
-	verb: "integrate"
+build: checks: "window": {
+	browser: true
 	cmds: [
-		"mise exec -- docker compose up -d --wait --build launch",
-		// --node-modules-dir=none: the check imports its driver from deno's cache, and
-		// the workspace package.json above would otherwise have deno expect a
-		// node_modules a fresh checkout has not got.
-		"deno test --no-lock --no-check --node-modules-dir=none --allow-all tests/window.test.ts",
+		"deno test --config tests/deno.json --no-lock --no-check --allow-all tests/window.test.ts",
 	]
 	note: "at 1280x800, 1440x900 and 1024x600 a game played to mate and reviewed never scrolls the page, keeps the step buttons and the panel's foot in view, and stands the chances bar beside the board"
 }
-
-terminal: surface: renderers: ["shell/renderers/clock.js", "shell/renderers/board.js"]
-
-build: (pronto.#DefaultBuild & {"code": code, "loop": loop, "cluster": cluster}).out
 
 out: pronto.#emit & {"code": code, "cluster": cluster, "terminal": terminal, "loop": loop, "build": build}

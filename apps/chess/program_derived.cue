@@ -3,15 +3,110 @@ package chess
 
 code: surface: screens: {
 	board: {
-		reads: [{entity: "Game"}, {entity: "Legal"}, {entity: "Move"}, {entity: "Opening"}, {entity: "Piece"}, {entity: "Setup"}, {entity: "Square"}, {entity: "Tick"}]
+		reads: [
+			{table: "tick", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "tick", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "game", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "legal", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "tick", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "opening", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "game", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"current","op":"eq"}], embeds: [], orders: ["ordinal"]},
+			{table: "game", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "legal", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "tick", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "opening", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "live", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: ["ord"]},
+			{table: "game", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "legal", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "tick", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "opening", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "live", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: ["id"]},
+			{table: "game", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "legal", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "tick", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "opening", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "game", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"current","op":"eq"}], embeds: [], orders: []},
+			{table: "game", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "legal", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "tick", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "opening", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"game_id","op":"eq"},{"col":"retracted","op":"eq"}], embeds: [], orders: ["ply"]},
+			{table: "move", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"game_id","op":"eq"},{"col":"retracted","op":"eq"}], embeds: [], orders: ["ply"]},
+			{table: "game", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "move", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "square", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "legal", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "piece", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "tick", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "opening", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "reads", nested: true, lists: [10], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "setup", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "setup", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "setup", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "setup", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "game", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"current","op":"eq"}], embeds: [], orders: []},
+			{table: "game", kind: "live", nested: true, lists: [10], route: "view", clauses: [{"col":"current","op":"eq"}], embeds: [], orders: []},
+		]
+		writes: [
+			{table: "tick", op: "reduce"},
+			{table: "game", op: "reduce"},
+			{table: "square", op: "reduce"},
+			{table: "piece", op: "reduce"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "move", op: "reduce"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+			{table: "game", op: "update"},
+		]
 		files: {handlers: ["shell/handlers/bump.js", "shell/handlers/referee.js", "shell/handlers/seated.js"], adapters: []}
 	}
 	sheet: {
-		reads: [{entity: "Game"}, {entity: "Move"}]
+		reads: [
+			{table: "game", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+			{table: "move", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"game_id","op":"eq"},{"col":"retracted","op":"eq"}], embeds: [], orders: ["ply"]},
+			{table: "game", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"id","op":"eq"}], embeds: [], orders: []},
+		]
+		writes: []
 		files: {handlers: [], adapters: []}
 	}
 	shelf: {
-		reads: [{entity: "Game"}]
+		reads: [
+			{table: "game", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"status","op":"eq"}], embeds: [], orders: ["ordinal"]},
+			{table: "game", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+			{table: "game", kind: "live", nested: false, lists: [], route: "view", clauses: [{"col":"status","op":"eq"}], embeds: [], orders: ["ordinal"]},
+			{table: "game", kind: "reads", nested: false, lists: [], route: "whole", clauses: [], embeds: [], orders: []},
+		]
+		writes: [
+			{table: "game", op: "reduce"},
+		]
 		files: {handlers: ["shell/handlers/resume.js"], adapters: []}
 	}
 }

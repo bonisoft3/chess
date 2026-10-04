@@ -3,6 +3,12 @@ include:
 - path: ./compose.bayt.yaml
   required: false
 services:
+  browser:
+    extends:
+      file: ./compose.browser.yaml
+      service: apps_chess-browser
+    profiles:
+    - browser
   setup:
     extends:
       file: ./compose.setup.yaml
@@ -28,6 +34,13 @@ services:
       service: apps_chess-integrate
     profiles:
     - integrate
+    scale: 1
+  check-window:
+    extends:
+      file: ./compose.check-window.yaml
+      service: apps_chess-check-window
+    profiles:
+    - check-window
     scale: 1
   caddy:
     extends:

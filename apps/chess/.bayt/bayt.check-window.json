@@ -1,0 +1,281 @@
+{
+  "_generated_from": "bayt.cue (do not edit)",
+  "compose": {
+    "up": true,
+    "manual": true,
+    "build": {
+      "additional_contexts": {
+        "root": "../../.."
+      },
+      "secrets": [],
+      "args": {}
+    },
+    "command": [
+      "mise",
+      "x",
+      "--",
+      "sh",
+      "-c",
+      "deno test --config tests/deno.json --no-lock --no-check --allow-all tests/window.test.ts"
+    ],
+    "depends_on": {
+      "apps_chess-launch": {
+        "condition": "service_healthy"
+      }
+    },
+    "environment": {
+      "APP_URL": "https://caddy:8443"
+    },
+    "ports": [],
+    "volumes": []
+  },
+  "dockerfile": {
+    "preamble": [],
+    "preambleCopyContexts": [],
+    "from": {
+      "ref": ":browser",
+      "name": "apps_chess-browser"
+    },
+    "add": [],
+    "mounts": [],
+    "secrets": {},
+    "extra_hosts": [],
+    "epilogue": [],
+    "copy": [
+      {
+        "from": {
+          "name": "root"
+        },
+        "srcs": [
+          "plugins/omnishell",
+          "libraries/mecha"
+        ],
+        "dst": "/monorepo/",
+        "link": true,
+        "parents": true,
+        "exclude": []
+      }
+    ],
+    "healthcheck": null,
+    "expose": [],
+    "entrypoint": null,
+    "incremental": false,
+    "cmd": null
+  },
+  "name": "check-window",
+  "project": "apps_chess",
+  "dir": "apps/chess",
+  "activate": "",
+  "srcs": {
+    "globs": [
+      "tests/**"
+    ],
+    "exclude": []
+  },
+  "outs": {
+    "globs": [],
+    "exclude": []
+  },
+  "state": {
+    "globs": []
+  },
+  "env": {
+    "MISE_ALWAYS_KEEP_DOWNLOAD": "1"
+  },
+  "synthetics": {
+    "bayt": {
+      "name": "check-window_bayt",
+      "project": "apps_chess",
+      "dir": "apps/chess",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [
+          ".bayt/compose.check-window.yaml",
+          ".bayt/Dockerfile.check-window",
+          ".bayt/bayt.check-window.json",
+          ".bayt/Taskfile.yml",
+          ".bayt/Taskfile.bayt.yml",
+          ".bayt/Taskfile.check-window.yaml",
+          ".bayt/compose.check-window.closure.yaml"
+        ],
+        "exclude": []
+      },
+      "env": {},
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "apps/chess/.bayt/compose.check-window.yaml",
+        "apps/chess/.bayt/compose.browser.yaml",
+        "apps/chess/.bayt/compose.launch.yaml",
+        "apps/chess/.bayt/compose.caddy.yaml"
+      ]
+    },
+    "outs": {
+      "name": "check-window_outs",
+      "project": "apps_chess",
+      "dir": "apps/chess",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [],
+        "exclude": []
+      },
+      "env": {},
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "apps/chess/.bayt/compose.check-window.yaml",
+        "apps/chess/.bayt/compose.browser.yaml",
+        "apps/chess/.bayt/compose.launch.yaml",
+        "apps/chess/.bayt/compose.caddy.yaml"
+      ]
+    },
+    "srcs": {
+      "name": "check-window_srcs",
+      "project": "apps_chess",
+      "dir": "apps/chess",
+      "activate": "",
+      "srcs": {
+        "globs": [],
+        "exclude": []
+      },
+      "outs": {
+        "globs": [
+          "tests/**"
+        ],
+        "exclude": []
+      },
+      "env": {},
+      "visibility": "internal",
+      "deps": [],
+      "transitiveDeps": [
+        "browser_srcs",
+        "launch_outs_srcs"
+      ],
+      "transitiveCrossDeps": [],
+      "chainedDeps": [],
+      "cmds": [],
+      "cache": {
+        "full": false,
+        "similar": false
+      },
+      "upClosure": [
+        "apps/chess/.bayt/compose.check-window.yaml",
+        "apps/chess/.bayt/compose.browser.yaml",
+        "apps/chess/.bayt/compose.launch.yaml",
+        "apps/chess/.bayt/compose.caddy.yaml"
+      ]
+    }
+  },
+  "taskfile": {
+    "run": "once",
+    "incremental": true,
+    "preconditions": []
+  },
+  "visibility": "internal",
+  "emitsSrcs": true,
+  "deps": [
+    "browser",
+    "launch_outs"
+  ],
+  "sameProjectDeps": [
+    "browser",
+    "launch_outs"
+  ],
+  "transitiveDeps": [
+    "browser",
+    "launch_outs"
+  ],
+  "transitiveCrossDeps": [],
+  "upClosure": [
+    "apps/chess/.bayt/compose.check-window.yaml",
+    "apps/chess/.bayt/compose.browser.yaml",
+    "apps/chess/.bayt/compose.launch.yaml",
+    "apps/chess/.bayt/compose.caddy.yaml"
+  ],
+  "chainedDeps": [
+    {
+      "name": "browser",
+      "project": "apps_chess",
+      "dir": "apps/chess",
+      "outs": {
+        "globs": [],
+        "exclude": []
+      }
+    },
+    {
+      "name": "launch_outs",
+      "project": "apps_chess",
+      "dir": "apps/chess",
+      "outs": {
+        "globs": [],
+        "exclude": []
+      }
+    }
+  ],
+  "cmds": [
+    {
+      "srcs": {
+        "globs": [
+          "tests/**",
+          "[m]ise.toml",
+          "[.]mise.toml",
+          "[m]ise.lock",
+          "[.]tool-versions"
+        ],
+        "exclude": [],
+        "defaultGlobs": null,
+        "defaultExclude": null
+      },
+      "do": "mise install",
+      "dockerfile": {
+        "do": "d=/root/.local/share/mise/downloads; s=/mise-tarball-store; mkdir -p \"$d\" \"$s\"; cp -r \"$s\"/. \"$d\"/ 2>/dev/null || true; mise install || exit; cd \"$d\" && for f in */*/*; do [ -f \"$f\" ] || continue; o=\"$s/$f\"; [ -e \"$o\" ] && continue; mkdir -p \"$(dirname \"$o\")\"; t=\"$(mktemp \"$(dirname \"$o\")/.pXXXXXX\")\" && cp \"$f\" \"$t\" && mv -f \"$t\" \"$o\"; done; :",
+        "mounts": [
+          {
+            "type": "cache",
+            "target": "/root/.local/share/mise/downloads",
+            "scope": "project",
+            "required": false
+          },
+          {
+            "type": "cache",
+            "target": "/mise-tarball-store",
+            "scope": "global",
+            "required": false
+          }
+        ],
+        "shell": "sh"
+      },
+      "name": "builtin",
+      "shell": "exec",
+      "stop": false
+    }
+  ],
+  "cache": {
+    "full": false,
+    "similar": false
+  }
+}

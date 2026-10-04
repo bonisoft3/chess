@@ -3,6 +3,7 @@ FROM caddy:2.9-alpine@sha256:b4e3952384eb9524a887633ce65c752dd7c71314d2c2acf98cd
 WORKDIR /monorepo/apps/chess
 COPY --chmod=755 --from=tarampampam/microcheck:1@sha256:79c187c05bfa67518078bf4db117771942fa8fe107dc79a905861c75ddf28dfa /bin/httpcheck /usr/local/bin/httpcheck
 COPY docker/Caddyfile /etc/caddy/Caddyfile
+COPY .cert[s] /certs/
 COPY shell/index.html /srv/shell/index.html
 COPY shell/shell.css /srv/shell/shell.css
 COPY shell/boot.js /srv/shell/boot.js
@@ -20,8 +21,8 @@ COPY shell/handlers/bump.js /srv/shell/handlers/bump.js
 COPY shell/handlers/referee.js /srv/shell/handlers/referee.js
 COPY shell/handlers/resume.js /srv/shell/handlers/resume.js
 COPY shell/handlers/seated.js /srv/shell/handlers/seated.js
-COPY shell/renderers/clock.js /srv/shell/renderers/clock.js
 COPY shell/renderers/board.js /srv/shell/renderers/board.js
+COPY shell/renderers/clock.js /srv/shell/renderers/clock.js
 COPY shell/shared/paper.css /srv/shell/shared/paper.css
 COPY shell/units/stockfish/LICENSE /srv/shell/units/stockfish/LICENSE
 COPY shell/units/stockfish/NOTICE.md /srv/shell/units/stockfish/NOTICE.md
@@ -39,10 +40,13 @@ COPY --from=root plugins/omnishell/interpreter/hatch.js /omnishell/interpreter/h
 COPY --from=root plugins/omnishell/interpreter/hatch-worker.js /omnishell/interpreter/hatch-worker.js
 COPY --from=root plugins/omnishell/interpreter/storybook.js /omnishell/interpreter/storybook.js
 COPY --from=root plugins/omnishell/interpreter/jessie.js /omnishell/interpreter/jessie.js
+COPY --from=root plugins/omnishell/interpreter/kinetic.js /omnishell/interpreter/kinetic.js
+COPY --from=root plugins/omnishell/interpreter/prng.js /omnishell/interpreter/prng.js
 COPY --from=root plugins/omnishell/interpreter/vendor/mecha-client.js /omnishell/interpreter/vendor/mecha-client.js
 COPY --from=root plugins/omnishell/interpreter/vendor/js-yaml.js /omnishell/interpreter/vendor/js-yaml.js
 COPY --from=root plugins/omnishell/interpreter/vendor/ses.umd.min.js /omnishell/interpreter/vendor/ses.umd.min.js
 COPY --from=root plugins/omnishell/interpreter/vendor/morphlex.js /omnishell/interpreter/vendor/morphlex.js
+COPY --from=root plugins/omnishell/interpreter/vendor/messages.js /omnishell/interpreter/vendor/messages.js
 COPY --from=root plugins/omnishell/components/wallclock.js /omnishell/components/wallclock.js
 COPY brief.html /srv/docs/brief.html
 COPY ir.html /srv/docs/ir.html
@@ -50,13 +54,13 @@ COPY acceptance.md /srv/docs/acceptance.md
 COPY DESIGN.md /srv/docs/DESIGN.md
 COPY robots.txt /srv/robots.txt
 COPY sitemap.xml /srv/sitemap.xml
-COPY --parents docker/Caddyfile shell/index.html shell/shell.css shell/boot.js offline-first-sw.js shell/shell.yaml shell/shell.json shell/design.css shell/screens/board.html shell/screens/board.css shell/screens/shelf.html shell/screens/shelf.css shell/screens/sheet.html shell/screens/sheet.css shell/handlers/bump.js shell/handlers/referee.js shell/handlers/resume.js shell/handlers/seated.js shell/renderers/clock.js shell/renderers/board.js shell/shared/paper.css shell/units/stockfish/LICENSE shell/units/stockfish/NOTICE.md shell/units/stockfish/stockfish-18-lite-single.js shell/units/stockfish/stockfish-18-lite-single.wasm shell/units/stockfish/unit.js brief.html ir.html acceptance.md DESIGN.md robots.txt sitemap.xml ./
+COPY --parents docker/Caddyfile shell/index.html shell/shell.css shell/boot.js offline-first-sw.js shell/shell.yaml shell/shell.json shell/design.css shell/screens/board.html shell/screens/board.css shell/screens/shelf.html shell/screens/shelf.css shell/screens/sheet.html shell/screens/sheet.css shell/handlers/bump.js shell/handlers/referee.js shell/handlers/resume.js shell/handlers/seated.js shell/renderers/board.js shell/renderers/clock.js shell/shared/paper.css shell/units/stockfish/LICENSE shell/units/stockfish/NOTICE.md shell/units/stockfish/stockfish-18-lite-single.js shell/units/stockfish/stockfish-18-lite-single.wasm shell/units/stockfish/unit.js brief.html ir.html acceptance.md DESIGN.md robots.txt sitemap.xml ./
 COPY .bayt/Taskfile.yml .bayt/Taskfile.bayt.yml .bayt/bayt.caddy.json ./.bayt/
 HEALTHCHECK --interval=5s --timeout=5s --retries=30 --start-period=10s CMD ["httpcheck","http://127.0.0.1:8080/health"]
 
 FROM busybox:musl@sha256:03db190ed4c1ceb1c55d179a0940e2d71d42130636a780272629735893292223 AS caddy_ctxs
 WORKDIR /monorepo/apps/chess
-COPY --parents docker/Caddyfile shell/index.html shell/shell.css shell/boot.js offline-first-sw.js shell/shell.yaml shell/shell.json shell/design.css shell/screens/board.html shell/screens/board.css shell/screens/shelf.html shell/screens/shelf.css shell/screens/sheet.html shell/screens/sheet.css shell/handlers/bump.js shell/handlers/referee.js shell/handlers/resume.js shell/handlers/seated.js shell/renderers/clock.js shell/renderers/board.js shell/shared/paper.css shell/units/stockfish/LICENSE shell/units/stockfish/NOTICE.md shell/units/stockfish/stockfish-18-lite-single.js shell/units/stockfish/stockfish-18-lite-single.wasm shell/units/stockfish/unit.js brief.html ir.html acceptance.md DESIGN.md robots.txt sitemap.xml ./
+COPY --parents docker/Caddyfile shell/index.html shell/shell.css shell/boot.js offline-first-sw.js shell/shell.yaml shell/shell.json shell/design.css shell/screens/board.html shell/screens/board.css shell/screens/shelf.html shell/screens/shelf.css shell/screens/sheet.html shell/screens/sheet.css shell/handlers/bump.js shell/handlers/referee.js shell/handlers/resume.js shell/handlers/seated.js shell/renderers/board.js shell/renderers/clock.js shell/shared/paper.css shell/units/stockfish/LICENSE shell/units/stockfish/NOTICE.md shell/units/stockfish/stockfish-18-lite-single.js shell/units/stockfish/stockfish-18-lite-single.wasm shell/units/stockfish/unit.js brief.html ir.html acceptance.md DESIGN.md robots.txt sitemap.xml ./
 ARG SOURCE_DATE_EPOCH
 ARG BAYT_CLAMP=1
 RUN if [ "${BAYT_CLAMP:-1}" != 0 ]; then find /monorepo/apps/chess -exec touch -hd @${SOURCE_DATE_EPOCH:-0} {} + && touch -hd @${SOURCE_DATE_EPOCH:-0} /monorepo /monorepo/apps; fi

@@ -5,6 +5,7 @@ package chess
 terminal: surface: {
   runtime: "../../plugins/omnishell/runtime"
   interpreterRoot: "../../plugins/omnishell/interpreter"
+  componentsRoot: "../../plugins/omnishell/components"
   markupReader: "../../plugins/omnishell/read-markup.ts"
   machineSchema: "../../plugins/omnishell/machine.cue"
 }

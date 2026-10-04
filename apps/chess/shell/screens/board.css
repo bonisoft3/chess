@@ -23,10 +23,10 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
   --pad: 18px;
   --bars: 46px;
   --gap: 10px;
-  --panel: 380px;
   --gutter: 30px;
-  --board: min(calc(100cqh - 2 * var(--pad) - 2 * var(--bars) - 2 * var(--gap) - 8px),
-    calc(100vw - var(--rail-w) - var(--panel) - var(--gutter) - 2 * var(--pad) - 44px));
+  --board: round(down, min(calc(100cqh - 2 * var(--pad) - 2 * var(--bars) - 2 * var(--gap) - 8px),
+    calc(100vw - var(--rail-w) - 380px - var(--gutter) - 2 * var(--pad) - 44px)), 32px);
+  --panel: clamp(380px, calc(100vw - var(--rail-w) - var(--board) - var(--gutter) - 2 * var(--pad) - 44px), 480px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,18 +46,50 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
   display: grid;
   grid-template-columns: calc(var(--gutter) + var(--board)) var(--panel);
   grid-template-rows: var(--bars) var(--board) var(--bars);
-  column-gap: 36px;
+  column-gap: clamp(24px, 2.5vw, 40px);
   row-gap: var(--gap);
 }
 [data-screen="board"] .seat.top { grid-area: 1 / 1; margin-left: var(--gutter); }
 [data-screen="board"] .boardrow { grid-area: 2 / 1; display: flex; gap: 8px; }
 [data-screen="board"] .seat.you { grid-area: 3 / 1; margin-left: var(--gutter); }
 [data-screen="board"] .panel { grid-area: 1 / 2 / 4 / 3; }
-/* A phone cannot hold the panel beside the board, so it falls below it and
-   the page may scroll; the board and both players still fit above the fold. */
-@media (max-width: 900px) {
+
+@media (min-width: 1600px) {
   [data-screen="board"] {
-    --board: min(calc(100vw - var(--rail-w) - var(--gutter) - 2 * var(--pad) - 8px), calc(100cqh - 2 * var(--bars) - 120px));
+    --pad: 24px;
+    --bars: 48px;
+    --gap: 12px;
+    --gutter: 30px;
+    --board: round(down, min(calc(100cqh - 2 * var(--pad) - 2 * var(--bars) - 2 * var(--gap) - 8px),
+      calc(100vw - var(--rail-w) - 480px - var(--gutter) - 2 * var(--pad) - 64px)), 32px);
+    --panel: clamp(480px, calc(100vw - var(--rail-w) - var(--board) - var(--gutter) - 2 * var(--pad) - 64px), 640px);
+  }
+  [data-screen="board"] .table {
+    column-gap: 48px;
+  }
+  [data-screen="board"] .moves {
+    font-size: 1rem;
+    gap: 2px 10px;
+  }
+  [data-screen="board"] .foot {
+    gap: 10px;
+    padding: 12px 16px 14px;
+  }
+  [data-screen="board"] .acts {
+    gap: 10px;
+  }
+  [data-screen="board"] .pickers {
+    gap: 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  [data-screen="board"] {
+    --pad: 24px;
+    --bars: 46px;
+    --gap: 10px;
+    --gutter: 30px;
+    --board: round(down, min(calc(100vw - var(--rail-w) - var(--gutter) - 2 * var(--pad) - 8px), calc(100cqh - 2 * var(--bars) - 120px)), 32px);
     height: auto;
     overflow: visible;
     align-items: flex-start;
@@ -65,9 +97,130 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
   [data-screen="board"] .table {
     grid-template-columns: calc(var(--gutter) + var(--board));
     grid-template-rows: var(--bars) auto var(--bars) auto;
+    row-gap: var(--gap);
   }
-  [data-screen="board"] .panel { grid-area: 4 / 1; }
-  [data-screen="board"] .moves { max-height: 40svh; }
+  [data-screen="board"] .panel {
+    grid-area: 4 / 1;
+  }
+  [data-screen="board"] .moves {
+    max-height: 30svh;
+  }
+  [data-screen="board"] .nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--sp-sm);
+  }
+  [data-screen="board"] .acts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-sm);
+  }
+  [data-screen="board"] .acts .act {
+    width: 100%;
+  }
+  [data-screen="board"] .acts > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  [data-screen="board"] omnishell--picker {
+    display: contents;
+  }
+  [data-screen="board"] .pickers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-sm);
+  }
+  [data-screen="board"] .pickers > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  [data-screen="board"] .picker {
+    width: 100%;
+  }
+  [data-screen="board"] .picker > button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 10px;
+    font-size: 0.875rem;
+  }
+  [data-screen="board"] .picker > button::after {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  [data-screen="board"] {
+    --pad: 10px;
+    --bars: 42px;
+    --gap: 8px;
+    --gutter: 30px;
+    --board: round(down, min(calc(100vw - var(--rail-w) - var(--gutter) - 2 * var(--pad) - 6px), calc(100cqh - 2 * var(--bars) - 100px)), 32px);
+    height: auto;
+    overflow: visible;
+    align-items: flex-start;
+    padding: var(--pad);
+  }
+  [data-screen="board"] .table {
+    grid-template-columns: calc(var(--gutter) + var(--board));
+    grid-template-rows: var(--bars) auto var(--bars) auto;
+    row-gap: var(--gap);
+  }
+  [data-screen="board"] .panel {
+    grid-area: 4 / 1;
+  }
+  [data-screen="board"] .moves {
+    max-height: 36svh;
+  }
+  [data-screen="board"] .nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--sp-sm);
+  }
+  [data-screen="board"] omnishell--picker {
+    display: contents;
+  }
+  [data-screen="board"] .acts,
+  [data-screen="board"] .pickers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-sm);
+  }
+  [data-screen="board"] .acts .act {
+    width: 100%;
+  }
+  [data-screen="board"] .acts > :last-child:nth-child(odd),
+  [data-screen="board"] .pickers > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  [data-screen="board"] .picker {
+    width: 100%;
+  }
+  [data-screen="board"] .picker > button {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 10px;
+    font-size: 0.8125rem;
+  }
+  [data-screen="board"] .picker > button::after {
+    margin-left: auto;
+  }
+  [data-screen="board"] .seat {
+    min-height: 0;
+    height: var(--bars);
+  }
+  [data-screen="board"] .seat:not(.you) .sub {
+    display: none;
+  }
+  [data-screen="board"] .seat .av {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8125rem;
+  }
+  [data-screen="board"] .seat .clk {
+    padding: 6px 8px;
+    font-size: 1.125rem;
+  }
+  [data-screen="board"] .seat .taken {
+    font-size: 1.05rem;
+  }
 }
 
 /* The plate holds two layers: the grid takes the gestures, the layer above it
@@ -432,6 +585,13 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
   color: var(--secondary);
   letter-spacing: -3px;
 }
+@container (min-width: 520px) {
+  [data-screen="board"] .seat .av { width: 38px; height: 38px; font-size: 1rem; }
+  [data-screen="board"] .seat .nm { font-size: 1.0625rem; }
+  [data-screen="board"] .seat .sub { font-size: 0.8125rem; }
+  [data-screen="board"] .seat .clk { padding: 8px 14px; font-size: 1.45rem; }
+  [data-screen="board"] .seat .taken { font-size: 1.35rem; }
+}
 /* A narrow seat keeps who, the score and the clock: the line under the name
    goes, and the avatar and clock tighten. */
 @container (max-width: 360px) {
@@ -678,7 +838,7 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
 [data-screen="board"] .hint marker path { fill: var(--accent); }
 
 /* The four steps through the game, always the same four and always in reach. */
-[data-screen="board"] .nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+[data-screen="board"] .nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-sm); }
 [data-screen="board"] .navf { display: contents; }
 [data-screen="board"] .nav .act { min-width: 0; padding: 0; }
 
@@ -803,33 +963,6 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
 }
 
 [data-screen="board"] .pickers { display: flex; gap: var(--sp-sm); flex-wrap: wrap; }
-/* On a phone the two control rows wrap ragged — five items of five different
-   widths over three or four lines. A two-column grid is the same set in the
-   same order, aligned, and it is the difference between a strip of chrome and
-   a panel. The odd one out takes the whole row rather than half of it. */
-@media (max-width: 560px) {
-  [data-screen="board"] .acts,
-  [data-screen="board"] .pickers {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  [data-screen="board"] .acts > :last-child:nth-child(odd),
-  [data-screen="board"] .pickers > :last-child:nth-child(odd) { grid-column: 1 / -1; }
-  /* Each pair has to hold one line in half a phone's width, or its cell is
-     two lines tall and its neighbour is one. It wraps rather than clips if
-     one ever does not. */
-  [data-screen="board"] .picker > button {
-    width: 100%;
-    justify-content: flex-start;
-    padding: 0 10px;
-    font-size: 0.8125rem;
-  }
-  [data-screen="board"] .picker > button::after { margin-left: auto; }
-  /* The cast's line is flavour and the board is the thing that wants the
-     height; the guest's seat still says which colour and which clock. */
-  [data-screen="board"] .seat { min-height: 0; }
-  [data-screen="board"] .seat:not(.you) .sub { display: none; }
-}
 [data-screen="board"] .picker { position: relative; }
 [data-screen="board"] .picker button {
   font: inherit;
@@ -851,6 +984,7 @@ body:has([data-screen="board"]) > #app > .shell-screen { block-size: 100%; }
   width: auto;
   height: auto;
   clip-path: none;
+  overflow: visible;
   color: var(--secondary);
   font-weight: 400;
 }

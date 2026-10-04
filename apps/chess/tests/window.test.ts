@@ -4,11 +4,11 @@
 // and reviewed never makes the page taller than the window, the panel's foot
 // stays in view and uncut, and the chances bar stands beside the board.
 import { assert, assertEquals } from "jsr:@std/assert@1";
+import { baseUrl } from "../../../plugins/omnishell/base-url.ts";
 
-// The port compose.yaml publishes the stack on.
 // The app answers at its routes, not at the directory its assets live in:
 // /shell/ is where the document is served FROM and addresses no screen.
-const BASE = Deno.env.get("CHESS_URL") ?? `https://localhost:${Deno.env.get("CADDY_TLS_HOST_PORT") ?? "8443"}/`;
+const BASE = Deno.env.get("CHESS_URL") ?? `${await baseUrl(".")}/`;
 const SHOTS = Deno.env.get("CHESS_SHOTS") ?? "";
 // Scholar's mate, played by both hands at one board.
 const MATE = [["e2", "e4"], ["e7", "e5"], ["d1", "h5"], ["b8", "c6"], ["f1", "c4"], ["g8", "f6"], ["h5", "f7"]];
@@ -21,10 +21,10 @@ type Page = any;
 
 /** A fresh browser on the board screen at the given size, closed after `fn`. */
 const onBoard = async (width: number, height: number, fn: (page: Page) => Promise<void>) => {
-  const { chromium } = await import("npm:playwright@1.59.1");
+  const { chromium } = await import("npm:playwright@1.61.1");
   const browser = await chromium.launch({ headless: true, args: ["--ignore-certificate-errors"] });
   try {
-    const page = await browser.newPage({ ignoreHTTPSErrors: true, viewport: { width, height } });
+    const page = await browser.newPage({ viewport: { width, height } });
     await page.goto(BASE, { waitUntil: "load" });
     await page.waitForSelector(".board .sq", { timeout: 20000 });
     await fn(page);

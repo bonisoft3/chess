@@ -12,11 +12,10 @@ say:
         stop: false
       window:
         cmds:
-          - do: mise exec -- docker compose up -d --wait --build launch
-          - do: deno test --no-lock --no-check --node-modules-dir=none --allow-all tests/window.test.ts
+          - do: mise exec -- docker compose -p (^mise exec -- printenv COMPOSE_PROJECT_NAME | complete | get stdout | str trim | str replace -r '^$' 'chess') --profile '*' -f .bayt/compose.check-window.closure.yaml up bayt --abort-on-container-failure --exit-code-from bayt --build --remove-orphans --attach-dependencies
       visual:
         cmds:
-          - do: mise exec -- docker compose up -d --wait --build launch
+          - do: mise exec -- docker compose -p (^mise exec -- printenv COMPOSE_PROJECT_NAME | complete | get stdout | str trim | str replace -r '^$' 'chess') up -d --wait --build launch
           - do: mise exec -- docker compose -p (^mise exec -- printenv COMPOSE_PROJECT_NAME | complete | get stdout | str trim | str replace -r '^$' 'chess') --profile '*' -f .bayt/compose.integrate.closure.yaml up bayt --abort-on-container-failure --exit-code-from bayt --build --remove-orphans --attach-dependencies
   launch:
     rulemap:

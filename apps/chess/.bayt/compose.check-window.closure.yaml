@@ -1,0 +1,16 @@
+# generated from bayt.cue — do not edit
+include:
+- path: ../../../apps/chess/.bayt/compose.check-window.yaml
+  required: false
+- path: ../../../apps/chess/.bayt/compose.browser.yaml
+  required: false
+- path: ../../../apps/chess/.bayt/compose.launch.yaml
+  required: false
+- path: ../../../apps/chess/.bayt/compose.caddy.yaml
+  required: false
+services:
+  bayt:
+    extends:
+      file: ./compose.check-window.yaml
+      service: apps_chess-check-window
+    scale: 1

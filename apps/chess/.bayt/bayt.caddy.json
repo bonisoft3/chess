@@ -10,15 +10,18 @@
       "secrets": [],
       "args": {}
     },
+    "command": [
+      "sh",
+      "-c",
+      "if [ -f /certs/localhost.pem ]; then export CADDY_TLS='/certs/localhost.pem /certs/localhost-key.pem'; fi; exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile"
+    ],
     "environment": {
       "ELECTRIC_SECRET": "${ELECTRIC_SECRET:-dev-electric-secret}"
     },
     "ports": [
-      "${CADDY_TLS_HOST_PORT:-8443}:8443"
+      "${CADDY_TLS_HOST_PORT:-0}:8443"
     ],
-    "volumes": [
-      "../.certs:/certs:ro"
-    ],
+    "volumes": [],
     "depends_on": {},
     "networks": {
       "default": {
@@ -45,6 +48,11 @@
           "action": "sync+restart",
           "path": "../docker/Caddyfile",
           "target": "/etc/caddy/Caddyfile"
+        },
+        {
+          "action": "sync+restart",
+          "path": "../.certs",
+          "target": "/certs"
         },
         {
           "action": "sync+restart",
@@ -133,13 +141,13 @@
         },
         {
           "action": "sync+restart",
-          "path": "../shell/renderers/clock.js",
-          "target": "/srv/shell/renderers/clock.js"
+          "path": "../shell/renderers/board.js",
+          "target": "/srv/shell/renderers/board.js"
         },
         {
           "action": "sync+restart",
-          "path": "../shell/renderers/board.js",
-          "target": "/srv/shell/renderers/board.js"
+          "path": "../shell/renderers/clock.js",
+          "target": "/srv/shell/renderers/clock.js"
         },
         {
           "action": "sync+restart",
@@ -203,6 +211,16 @@
         },
         {
           "action": "sync+restart",
+          "path": "../../../plugins/omnishell/interpreter/kinetic.js",
+          "target": "/omnishell/interpreter/kinetic.js"
+        },
+        {
+          "action": "sync+restart",
+          "path": "../../../plugins/omnishell/interpreter/prng.js",
+          "target": "/omnishell/interpreter/prng.js"
+        },
+        {
+          "action": "sync+restart",
           "path": "../../../plugins/omnishell/interpreter/vendor/mecha-client.js",
           "target": "/omnishell/interpreter/vendor/mecha-client.js"
         },
@@ -220,6 +238,11 @@
           "action": "sync+restart",
           "path": "../../../plugins/omnishell/interpreter/vendor/morphlex.js",
           "target": "/omnishell/interpreter/vendor/morphlex.js"
+        },
+        {
+          "action": "sync+restart",
+          "path": "../../../plugins/omnishell/interpreter/vendor/messages.js",
+          "target": "/omnishell/interpreter/vendor/messages.js"
         },
         {
           "action": "sync+restart",
@@ -290,6 +313,16 @@
           "docker/Caddyfile"
         ],
         "dst": "/etc/caddy/Caddyfile",
+        "link": true,
+        "parents": false,
+        "exclude": []
+      },
+      {
+        "from": null,
+        "srcs": [
+          ".cert[s]"
+        ],
+        "dst": "/certs/",
         "link": true,
         "parents": false,
         "exclude": []
@@ -467,9 +500,9 @@
       {
         "from": null,
         "srcs": [
-          "shell/renderers/clock.js"
+          "shell/renderers/board.js"
         ],
-        "dst": "/srv/shell/renderers/clock.js",
+        "dst": "/srv/shell/renderers/board.js",
         "link": true,
         "parents": false,
         "exclude": []
@@ -477,9 +510,9 @@
       {
         "from": null,
         "srcs": [
-          "shell/renderers/board.js"
+          "shell/renderers/clock.js"
         ],
-        "dst": "/srv/shell/renderers/board.js",
+        "dst": "/srv/shell/renderers/clock.js",
         "link": true,
         "parents": false,
         "exclude": []
@@ -681,6 +714,30 @@
           "name": "root"
         },
         "srcs": [
+          "plugins/omnishell/interpreter/kinetic.js"
+        ],
+        "dst": "/omnishell/interpreter/kinetic.js",
+        "link": true,
+        "parents": false,
+        "exclude": []
+      },
+      {
+        "from": {
+          "name": "root"
+        },
+        "srcs": [
+          "plugins/omnishell/interpreter/prng.js"
+        ],
+        "dst": "/omnishell/interpreter/prng.js",
+        "link": true,
+        "parents": false,
+        "exclude": []
+      },
+      {
+        "from": {
+          "name": "root"
+        },
+        "srcs": [
           "plugins/omnishell/interpreter/vendor/mecha-client.js"
         ],
         "dst": "/omnishell/interpreter/vendor/mecha-client.js",
@@ -720,6 +777,18 @@
           "plugins/omnishell/interpreter/vendor/morphlex.js"
         ],
         "dst": "/omnishell/interpreter/vendor/morphlex.js",
+        "link": true,
+        "parents": false,
+        "exclude": []
+      },
+      {
+        "from": {
+          "name": "root"
+        },
+        "srcs": [
+          "plugins/omnishell/interpreter/vendor/messages.js"
+        ],
+        "dst": "/omnishell/interpreter/vendor/messages.js",
         "link": true,
         "parents": false,
         "exclude": []
@@ -837,8 +906,8 @@
       "shell/handlers/referee.js",
       "shell/handlers/resume.js",
       "shell/handlers/seated.js",
-      "shell/renderers/clock.js",
       "shell/renderers/board.js",
+      "shell/renderers/clock.js",
       "shell/shared/paper.css",
       "shell/units/stockfish/LICENSE",
       "shell/units/stockfish/NOTICE.md",
@@ -954,8 +1023,8 @@
           "shell/handlers/referee.js",
           "shell/handlers/resume.js",
           "shell/handlers/seated.js",
-          "shell/renderers/clock.js",
           "shell/renderers/board.js",
+          "shell/renderers/clock.js",
           "shell/shared/paper.css",
           "shell/units/stockfish/LICENSE",
           "shell/units/stockfish/NOTICE.md",
